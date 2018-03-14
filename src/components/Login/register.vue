@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { doRegister, sendCaptcha } from '../../lib/vueHelper'
+/*import { doRegister, sendCaptcha } from '../../lib/vueHelper'*/
 
 export default {
   name: 'register',

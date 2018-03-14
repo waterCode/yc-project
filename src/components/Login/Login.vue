@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { doLogin } from '../../lib/vueHelper'
+/*import { doLogin } from '../../lib/vueHelper'*/
 
 export default {
   name: 'login',

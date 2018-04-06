@@ -9,14 +9,14 @@
       <el-form-item prop="userName" >
         <el-input v-model="registerForm.userName" placeholder="账号"></el-input>
       </el-form-item>
-      <el-form-item prop="pwd">
-        <el-input v-model="registerForm.pwd" placeholder="密码" type="password"></el-input>
+      <el-form-item prop="password">
+        <el-input v-model="registerForm.password" placeholder="密码" type="password"></el-input>
       </el-form-item>
       <el-form-item prop="checkPwd">
         <el-input v-model="registerForm.checkPwd" placeholder="请再次输入密码" type="password"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitForm('registerForm')" class="submitBtn">立即注册</el-button>
+        <el-button type="primary" @click="submitForm()" class="submitBtn">立即注册</el-button>
       </el-form-item>
 
     </el-form>
@@ -54,21 +54,27 @@
 </template>
 
 <script>
-/*import { doRegister, sendCaptcha } from '../../lib/vueHelper'*/
+import { doRegister } from '../../lib/vueHelper'
 export default {
   name :'register',
   data(){
     return{
       registerForm: {
         userName: '',
-        pwd: '',
-        checkPwd: '',
-        email: '',
-        captcha: ''
+        password: '',
       }
     }
+  },
+
+  methods: {
+    submitForm () {
+      console.log("submitform")
+      doRegister(this,this.registerForm)
+    },
+
   }
 }
+
 
 
 /*export default {

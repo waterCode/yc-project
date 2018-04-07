@@ -158,7 +158,7 @@
          </div>
          <div class="introduction">
            <div class="in-content center">
-             <div class="in-content-font" data-aos="fade-right"><!--团队近况<br></br>-->
+             <div class="in-content-font" data-aos="fade-right">团队近况<br/>
              </div>
              <div class="game">
                <div class="game-font" data-aos="fade-right">赛事
@@ -193,10 +193,10 @@
          <div class="content">
            <div class="content-maintext">联系我们</div>
            <div class="content-others">
-             <div class="content-others-weixin"><a href="javascript:;" class="imgs">微信公众号</a></div>
-             <div class="content-others-qq"><a href="javascript:;" class="tooltip" title="qq群：469513909">QQ</a></div>
-             <div class="content-others-email"><a href="javascript:;" class="tooltip" title="email：gdut_YC@163.com">邮箱</a></div>
-             <div class="content-others-phone"><a href="javascript:;" class="tooltip" title="创客空间A109">地址</a></div>
+             <div class="content-others-weixin"><a href="javascript:" class="imgs">微信公众号</a></div>
+             <div class="content-others-qq"><a href="javascript:" class="tooltip" title="qq群：469513909">QQ</a></div>
+             <div class="content-others-email"><a href="javascript:" class="tooltip" title="email：gdut_YC@163.com">邮箱</a></div>
+             <div class="content-others-phone"><a href="javascript:" class="tooltip" title="创客空间A109">地址</a></div>
            </div>
          </div>
          <div class="copyright">

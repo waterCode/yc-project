@@ -54,11 +54,11 @@
 
 
 
-    .panel{
+    /*.panel{
         filter: alpha(opacity=80);
         opacity:0.8;
         border-radius: 10px;
-    }
+    }*/
 
     .col-md-4{
         padding-left:0;

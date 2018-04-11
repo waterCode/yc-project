@@ -18,9 +18,9 @@
 
 
             </div>
-
             <div class="form-group">
               <label class="col-md-7"></label>
+              <!--表格开始的地方-->
               <div class="col-md-5 panel panel-primary">
                 <div class="panel-body">
 
@@ -149,7 +149,6 @@
 
       <br/>
 
-      <a href="javascript:;" id="btn" title="回到顶部"></a>
 
       <div class="banner-bottom animated rotateIn">
         <h3><span><img src="../../assets/img/join_us/logo.png"></span>欢迎光临!</h3>
@@ -386,9 +385,9 @@
 </script>
 
 <style scoped>
-/*  @import "../../../static/css/main.css";
-  @import "../../../static/css/mainse.css";
-  @import "../../../static/css/animate.min.css";*/
+ /* @import "../../../static/css/main.css";
+  @import "../../../static/css/mainse.css";*/
+  /*@import "../../../static/css/animate.min.css";*/
 
 
 
@@ -406,11 +405,13 @@
     -o-background-size: cover;
     -ms-background-size: cover;    }
 
+/*
   .dowebok {
     animate-duration: 3s;
     animate-delay: 6s;
     animate-iteration-count: 2;
   }
+*/
 
   select{
     color: #555;
@@ -420,4 +421,9 @@
     resize: none;
   }
 
+ .panel{
+   filter: alpha(opacity=80);
+   opacity:0.8;
+   border-radius: 10px;
+ }
 </style>

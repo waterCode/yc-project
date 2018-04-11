@@ -8,8 +8,8 @@ import 'element-ui/lib/theme-chalk/index.css'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import $ from 'jquery'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min'
+/*import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min'*/
 
 Vue.config.productionTip = false
 

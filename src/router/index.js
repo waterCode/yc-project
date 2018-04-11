@@ -4,6 +4,7 @@ import Login from '@/components/Login/Login.vue'
 import Register from  '@/components/Login/register'
 import homePage from  '@/components/Login/homePage'
 import joinUsPage from '@/components/Login/joinUsPage'
+import joinCompetition from '@/components/user/joinCompetition'
 
 
 Vue.use(Router)
@@ -29,7 +30,13 @@ export default new Router({
       path:'/register',
       name:'Register',
       component:Register
+    },
+    {
+      path:'/joinCompetition',
+      name:'joinCompetition',
+      component:joinCompetition
     }
+
 
   ]
 })

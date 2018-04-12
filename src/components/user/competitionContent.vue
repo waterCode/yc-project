@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">队长姓名：</label>
-                            <input type="text" name="captionname" required="required" @keyup="TestReg($event)" autocomplete="off" placeholder="（必填）请输入队长姓名">
+                            <input type="text" v-model="competitionForm.captionName"  name="captionname" required="required" @keyup="TestReg($event)" autocomplete="off" placeholder="（必填）请输入队长姓名">
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
@@ -18,19 +18,19 @@
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">专业年级：</label>
-                            <input type="text" name="ZhuanYe" required="required" @keyup="TestReg($event)" autocomplete="off" placeholder="（必填）如：x级x专业x班">
+                            <input type="text" v-model="competitionForm.zhuanYe" name="ZhuanYe" required="required" @keyup="TestReg($event)" autocomplete="off" placeholder="（必填）如：x级x专业x班">
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">学号：</label>
-                            <input type="text"  name="" required="required" name="XueHao" @keyup="TestReg($event),$event.currentTarget.value=$event.currentTarget.value.replace(/[^\d]/g,'')" autocomplete="off" placeholder="（必填） 十位数字">
+                            <input type="text"  v-model="competitionForm.xueHao" name="" required="required" name="XueHao" @keyup="TestReg($event),$event.currentTarget.value=$event.currentTarget.value.replace(/[^\d]/g,'')" autocomplete="off" placeholder="（必填） 十位数字">
                             <span></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">电话：</label>
-                            <input type="text" required="required" @keyup="TestReg($event),$event.currentTarget.value=$event.currentTarget.value.replace(/[^\d]/g,'')" name="Telephone" autocomplete="off" placeholder="（必填） 十一位数字">
+                            <input type="text" v-model="competitionForm.telephone" required="required" @keyup="TestReg($event),$event.currentTarget.value=$event.currentTarget.value.replace(/[^\d]/g,'')" name="Telephone" autocomplete="off" placeholder="（必填） 十一位数字">
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
@@ -42,12 +42,12 @@
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">学校：</label>
-                            <input type="text" required="required" @keyup="TestReg($event)" name="School" autocomplete="off" placeholder="（必填）如：广东工业大学">
+                            <input type="text" v-model="competitionForm.school" required="required" @keyup="TestReg($event)" name="School" autocomplete="off" placeholder="（必填）如：广东工业大学">
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">通讯地址：</label>
-                            <input type="text"  name="Adress" required="required" @keyup="TestReg($event)" autocomplete="off" placeholder="（必填）">
+                            <input type="text"  name="Adress" v-model="competitionForm.adress" required="required" @keyup="TestReg($event)" autocomplete="off" placeholder="（必填）">
                             <span></span>
                         </div>
                     </div>
@@ -68,12 +68,12 @@
                 <div class="row">
                     <div class="col-sm-5 row-p">
                         <label for="" class="form-label" style="display:inline-block">队伍名称：</label>
-                        <input type="text" name="DuiWuName" required="required" @keyup="TestReg($event)" style="display:inline-block" placeholder="（必填）">
+                        <input type="text" name="DuiWuName" v-model="competitionForm.duiWuName" required="required" @keyup="TestReg($event)" style="display:inline-block" placeholder="（必填）">
                         <span style="display:inline-block"></span>
                     </div>
                     <div class="col-sm-5 row-p">
                         <label for="" class="form-label" style="display:inline-block">作品名称：</label>
-                        <input type="text" name="ZuoPinName" required="required" @keyup="TestReg($event)" style="display:inline-block" placeholder="（必填）">
+                        <input type="text"v-model="competitionForm.zuoPinName" name="ZuoPinName" required="required" @keyup="TestReg($event)" style="display:inline-block" placeholder="（必填）">
                         <span style="display:inline-block"></span>
                     </div>
                 </div>
@@ -162,37 +162,37 @@
             <h4 class="competition-titles">作品简介：（作品描述、限200字）</h4>
             <form role="form" class="other-desc" id="form5">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="productIntroduce" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" v-model="competitionForm.productIntroduce" rows="3" maxlength="200" style="resize: none" name="productIntroduce" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">技术方案：（限200字）</h4>
             <form role="form" class="other-desc" id="form6">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="technologyCase" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" v-model="competitionForm.technologyCase" rows="3" maxlength="200" style="resize: none" name="technologyCase" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">技术路线：（限200字）</h4>
             <form role="form" class="other-desc" id="form7">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="technologyWay" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" v-model="competitionForm.technologyWay" rows="3" maxlength="200" style="resize: none" name="technologyWay" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">创新点：（限100字）</h4>
             <form role="form" class="other-desc" id="form8">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="aboutNews" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" v-model="competitionForm.aboutNews" rows="3" maxlength="200" style="resize: none" name="aboutNews" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">实现的功能和指标：（限200字）</h4>
             <form role="form" class="other-desc" id="form9">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="aboutFunction" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" v-model="competitionForm.aboutFunction" rows="3" maxlength="200" style="resize: none" name="aboutFunction" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">测试演示情况：</h4>
             <form role="form" class="other-desc" id="form10">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" style="resize: none" name="aboutTest" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" v-model="competitionForm.aboutTest" rows="3" style="resize: none" name="aboutTest" placeholder="（必填）"></textarea>
                 </div>
             </form>
         </div>
@@ -255,7 +255,26 @@ export default {
       formdataPic:{},
       formdataWenjian1:{},
       formdataWenjian2:{},
-      Alldata:{}
+      Alldata:{},
+      competitionForm:{
+        captionName : '',
+        zhuanYe : '',
+        xueHao : '',
+        telephone : '',
+        weChat : '',
+        school : '',
+        duiWuName : '',
+        zuoPinName : '',
+        aboutTest : '',
+        aboutFunction : '',
+        aboutNews : '',
+        technologyWay : '',
+        technologyCase : '',
+        productIntroduce : '',
+        adress : '',
+
+
+      }
     }
   },
   computed:{
@@ -413,7 +432,7 @@ export default {
     myCheck(){
       console.log("checkall:"+this.CheckAll+"checkInputs1"+this.checkInputs1)
       if(this.CheckAll()&&this.checkInputs1==true){  //检验全部填写完毕
-          var form1 = $("#form1")
+          /*var form1 = $("#form1")
           var form1Value = form1.serialize()
           form1Value = decodeURIComponent(form1Value,true)
           var form3 = $("#form3")
@@ -451,7 +470,7 @@ export default {
               console.log(data[key]);
               obj[data[key].split("=")[0]] = data[key].split("=")[1];
           }
-          this.Alldata=data
+          this.Alldata=data*/
           return true
         }
       else {
@@ -513,71 +532,12 @@ export default {
       var two = document.getElementsByTagName('form')[name="documentForm1"]
       this.formdataWenjian2 = new FormData(two)
     },
-    postCaptionPic(){
-      $.ajax({
-        url:'',
-        type:'post',
-        data: this.formdataPic,
-        dataType:'json',
-        asycn:false,
-        cache:false,
-        contentType: false,
-        processData: false,
-        success:function(res){
-          return true
-        }
-      })
-    },
-    postDocument1(){
-      $.ajax({
-        url:'',
-        type:'post',
-        data: this.formdataWenjian1,
-        dataType:'json',
-        asycn:false,
-        cache:false,
-        contentType: false,
-        processData: false,
-        success:function(res){
-          return true
-        }
-      })
-    },
-    postDocument2(){
-      $.ajax({
-        url:'',
-        type:'post',
-        data: this.formdataWenjian2,
-        dataType:'json',
-        asycn:false,
-        cache:false,
-        contentType: false,
-        processData: false,
-        success:function(res){
-          return true
-        }
-      })
-    },
-    postOthers(){
-      $.ajax({
-        url:'',
-        type:'post',
-        data: this.Alldata,
-        dataType:'json',
-        asycn:false,
-        cache:false,
-        contentType: false,
-        processData: false,
-        success:function(res){
-          return true
-        }
-      })
-    },
+
     PostTO(){
       console.log("postT0")
       if(this.myCheck()){
-        postCompetitionRegistrationForm(this,this.Alldata)
-        console.log("alldata is:"+this.Alldata)
+        postCompetitionRegistrationForm(this,this.competitionForm)
+        console.log("alldata is:"+this.competitionForm)
         /*if(this.postDocument1()&&this.postDocument2()&&this.postCaptionPic()&&this.postOthers()){
           alert("报名成功！")
         }else {

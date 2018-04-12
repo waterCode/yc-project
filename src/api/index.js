@@ -7,6 +7,9 @@ export default {
   },
   register (data) {
     return Axios.post(API.register, data)
+  },
+  postCompetitionData(data){
+    return Axios.post(API.competition, data)
   }
 
 }

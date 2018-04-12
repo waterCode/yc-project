@@ -35,25 +35,7 @@ export const doLogin = (that, data) => {
 export const doRegister = (that, data) => {
 
   network.register(data)
-  /*$.ajax({
-    url: API.register,
-    type:'post',
-    data: data,
-    dataType:'json',
-    asycn:false,
-    cache:false,
-    contentType: false,
-    processData: false,
-    headers:{ 'Content-Type': 'application/json;charset=UTF-8'},
-    success:function(res){
-      console.log("success")
-      alert("注册成功")
-      //跳转
-      router.push({path: 'login', params: {username: data.userName}})
-      return true
-    }
-  })
-*/
+
   /*api.register(data)
     .then(res => {
       if (res.data.code === 0) {
@@ -68,6 +50,10 @@ export const doRegister = (that, data) => {
     .catch(err => {
       console.log(err)
     })*/
+}
+
+export const postCompetitionRegistrationForm = (that, data) =>{
+  network.postCompetitionData(data)
 }
 
 

@@ -91,11 +91,11 @@
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates1-ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates1_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates1-Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates1_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
@@ -105,11 +105,11 @@
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates2-ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates2_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates2-Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates2_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
@@ -119,11 +119,11 @@
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates3-ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates3_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates3-Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates3_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
@@ -133,11 +133,11 @@
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates4-ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates4_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates4-Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates4_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
@@ -147,11 +147,11 @@
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates5-ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates5_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates5-Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates5_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
@@ -162,37 +162,37 @@
             <h4 class="competition-titles">作品简介：（作品描述、限200字）</h4>
             <form role="form" class="other-desc" id="form5">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="作品简介" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="productIntroduce" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">技术方案：（限200字）</h4>
             <form role="form" class="other-desc" id="form6">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="技术方案" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="technologyCase" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">技术路线：（限200字）</h4>
             <form role="form" class="other-desc" id="form7">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="技术路线" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="technologyWay" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">创新点：（限100字）</h4>
             <form role="form" class="other-desc" id="form8">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="创新点" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="aboutNews" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">实现的功能和指标：（限200字）</h4>
             <form role="form" class="other-desc" id="form9">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="实现的功能和指标" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" rows="3" maxlength="200" style="resize: none" name="aboutFunction" placeholder="（必填）"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">测试演示情况：</h4>
             <form role="form" class="other-desc" id="form10">
                 <div class="form-group">
-                    <textarea class="form-control" rows="3" style="resize: none" name="测试演示情况" placeholder="（必填）"></textarea>
+                    <textarea class="form-control" rows="3" style="resize: none" name="aboutTest" placeholder="（必填）"></textarea>
                 </div>
             </form>
         </div>
@@ -237,6 +237,7 @@
 </template>
 
 <script>
+  import {postCompetitionRegistrationForm} from  '../../lib/vueHelper'
 export default {
   data(){
     return{
@@ -395,11 +396,13 @@ export default {
         for(var j=0;j<inputs.length;j++){
           if(inputs[j].value==''){
             this.checkInputs1=false
+            console.log("inputs i:"+i+"j:"+j+" false")
             return false
           }
         }
         for(var k =0;k<textareas.length;k++){
           if(textareas[k].value==''){
+            console.log("textareas i:"+i+"k:"+k+" false")
             this.checkInputs1=false
             return false
           }
@@ -408,6 +411,7 @@ export default {
       return true
     },
     myCheck(){
+      console.log("checkall:"+this.CheckAll+"checkInputs1"+this.checkInputs1)
       if(this.CheckAll()&&this.checkInputs1==true){  //检验全部填写完毕
           var form1 = $("#form1")
           var form1Value = form1.serialize()
@@ -570,12 +574,15 @@ export default {
       })
     },
     PostTO(){
+      console.log("postT0")
       if(this.myCheck()){
-        if(this.postDocument1()&&this.postDocument2()&&this.postCaptionPic()&&this.postOthers()){
+        postCompetitionRegistrationForm(this,this.Alldata)
+        console.log("alldata is:"+this.Alldata)
+        /*if(this.postDocument1()&&this.postDocument2()&&this.postCaptionPic()&&this.postOthers()){
           alert("报名成功！")
         }else {
           alert("报名失败！")
-        }
+        }*/
       }
     }
   },

@@ -10,7 +10,9 @@
 import gradeContent from './gradeContent'
 import competitionHeader from './competitionHeader.vue'
 import competitionFooter from './competitionFooter.vue'
+
 export default {
+
   components: {
     gradeContent,
     competitionHeader,

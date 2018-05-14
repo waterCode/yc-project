@@ -76,4 +76,9 @@ export const postCompetitionRegistrationForm = (that, data) =>{
 }
 
 
+export const submitTeamGrade = (that,data) =>{
+  network.postCompetitionData(sessionStorage.getItem('accessToken'),data)
+}
+
+
 

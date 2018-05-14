@@ -7,5 +7,5 @@ export default {
   register: `${API_ROOT}register`,
   competition: `${API_ROOT}team/joinCompetition`,
   participantInfo: `${API_ROOT}secure/participants`,
-
+  submitGrade: `${API_ROOT}secure/submitGrade`
 }

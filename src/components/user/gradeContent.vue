@@ -227,7 +227,7 @@
       </div>
         <div class="row">
         <span class="col-sm-2 col-xs-2"></span>
-        <input type="submit" name="" value="确认提交" class="btn btn-lg btn-primary col-sm-8 col-xs-8 allSubmit" @click="PostTO()">
+        <input type="submit" name="" value="确认提交" class="btn btn-lg btn-primary col-sm-8 col-xs-8 allSubmit" @click="submitGrade(this.grade)">
         <span class="col-sm-2 col-xs-2"></span>
       </div>
 
@@ -236,7 +236,7 @@
 </template>
 
 <script>
-  import {postCompetitionRegistrationForm} from  '../../lib/vueHelper'
+  import {submitTeamGrade} from  '../../lib/vueHelper'
 export default {
 
 
@@ -275,6 +275,7 @@ export default {
         adress : '',
       },
       grade:{
+        captionName:this.$route.params.data.captionName,
         newGrade:0,
         practiceGrade:0,
         otherGrade:0,
@@ -286,24 +287,16 @@ export default {
   },
   methods:{
 
-    getParams(){
-      let data = this.$route.params.data
-      console.log("graContent:")
-      console.log("haha"+data)
-    },
-
-
-
-
+    submitGrade(data){
+      submitTeamGrade(this,data)
+    }
 
 
   },
   mounted(){
 
   },
-  watch:{
-    '$route':'getParams'
-  }
+
 }
 </script>
 

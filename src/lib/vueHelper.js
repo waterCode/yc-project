@@ -13,22 +13,21 @@ export const showMsg = (that, close, msg, type) => {
 
 
 // doLogin
-export const doLogin = (that, data) => {
-  /*api.login(data)
+export const  doLogin = (that, data) => {
+  network.login(data)
     .then(res => {
-      if (res.data.code === 0) {
-        sessionStorage.setItem('accessToken', res.data.access_token)
-        sessionStorage.setItem('username', res.data.data.username)
-        sessionStorage.setItem('uid', res.data.data._id)
+      console.log("code"+res.data.result)
+      if (res.data.result) {
+        sessionStorage.setItem('accessToken', res.data.token)
         showMsg(that, true, '登录成功', 'success')
-        router.push({path: '/p/index', params: {username: res.data.username}})
+        router.push({path: '/', params: {username: res.data.username}})
       } else {
         showMsg(that, true, '登录失败，账号或密码错误', 'error')
       }
     })
     .catch(err => {
       console.log(err)
-    })*/
+    })
 }
 
 // doRegister
@@ -50,6 +49,26 @@ export const doRegister = (that, data) => {
     .catch(err => {
       console.log(err)
     })*/
+}
+/*要求是管理者的token才能返回数据*/
+export const getAllMembers=(that,data) =>{
+  //拿到token
+}
+/*要求是管理者的token才能返回数据*/
+export const getAllParticipantsMembers=(that,data) =>{
+  //拿到token
+  network.getAllParticipantsMembers(sessionStorage.getItem('accessToken'))
+    .then(res =>{
+      console.log(data.toString())
+      console.log(res.data.toString())
+      res.data.forEach((e)=>{
+        data.push(e)
+      })
+      //Object.assign({},data,res.data)
+      //data[0].duiWuName= res.data[0].duiWuName
+    })
+
+
 }
 
 export const postCompetitionRegistrationForm = (that, data) =>{

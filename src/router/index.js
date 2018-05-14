@@ -5,6 +5,9 @@ import Register from  '@/components/Login/register'
 import homePage from  '@/components/Login/homePage'
 import joinUsPage from '@/components/Login/joinUsPage'
 import joinCompetition from '@/components/user/joinCompetition'
+import gradePage from '@/components/user/gradePage'
+import memberListPage from '@/components/admin/memberList'
+import participantList from '@/components/admin/participantList'
 
 
 Vue.use(Router)
@@ -35,7 +38,23 @@ export default new Router({
       path:'/joinCompetition',
       name:'joinCompetition',
       component:joinCompetition
+    },
+    {
+      path:'/gradePage',
+      name:'gradePage',
+      component:gradePage
+    },
+    {
+      path:'/memberListPage',
+      name:'memberListPage',
+      component:memberListPage
+    },
+    {
+      path:'/participantList',
+      name:'participantList',
+      component:participantList
     }
+
 
 
   ]

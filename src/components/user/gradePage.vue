@@ -1,18 +1,18 @@
 <template>
   <div>
     <competitionHeader></competitionHeader>
-      <competitionContent></competitionContent>
+      <gradeContent></gradeContent>
       <competitionFooter></competitionFooter>
   </div>
 </template>
 
 <script>
-import competitionContent from './competitionContent.vue'
+import gradeContent from './gradeContent'
 import competitionHeader from './competitionHeader.vue'
 import competitionFooter from './competitionFooter.vue'
 export default {
   components: {
-    competitionContent,
+    gradeContent,
     competitionHeader,
     competitionFooter
   }

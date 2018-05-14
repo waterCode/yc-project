@@ -9,11 +9,11 @@
         <el-form-item prop="userName">
           <el-input type="userName" v-model="loginForm.userName" placeholder="账号"></el-input>
         </el-form-item>
-        <el-form-item prop="pwd">
-          <el-input v-model="loginForm.pwd" placeholder="密码" type="password"></el-input>
+        <el-form-item prop="password">
+          <el-input v-model="loginForm.password" placeholder="密码" type="password"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="submitForm('loginForm')" class="submitBtn">登录</el-button>
+          <el-button type="primary" @click="submitForm()" class="submitBtn">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -32,14 +32,14 @@ export default {
     return {
       loginForm: {
         userName: '',
-        pwd: ''
+        password: ''
       },
       loginRule: {
         userName: [
           { required: true, message: '请输入用户名', trigger: 'blur' },
           { min: 3, max: 10, message: '长度在 3 到 16 个字符', trigger: 'blur' }
         ],
-        pwd: [
+        password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
           { min: 3, max: 20, message: '长度在 3 到 20 个字符', trigger: 'blur' }
         ]
@@ -47,18 +47,8 @@ export default {
     }
   },
   methods: {
-    submitForm (formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          var data = {
-            'usr': this.loginForm.userName,
-            'pwd': this.loginForm.pwd
-          }
-          doLogin(this, data)
-        } else {
-          return false
-        }
-      })
+    submitForm () {
+      doLogin(this,this.loginForm)
     }
   }
 }

@@ -8,17 +8,9 @@
       <div class="others">
         <div class="name"><a href="#">YC 勇创</a></div>
         <div class="othername"><a href="#">主页</a></div>
-        <div class="othername"><a href="#">学习资料</a></div>
-        <div class="othername"><a href="#">了解我们</a></div>
-        <div class="othername"><a href="#">团队概况</a></div>
-        <div class="othername"><a href="javascript:;" class="join_us">加入我们</a></div>
-        <div class="othername"><a href="#">意见反馈</a></div>
-        <div class="wantsearch">
-          <form action="#" method="get">
-            <div class="wanttext"><input type="text" name=""></div>
-            <div class="search"><input type="submit" name="" value=""></div>
-          </form>
-        </div>
+        <div class="othername"><router-link to="/joinUsPage">加入我们</router-link></div>
+        <div class="othername"><router-link to="/joinCompetition">竞赛报名</router-link></div>
+        <div class="othername"><router-link to="/login">管理员登陆</router-link></div>
       </div>
     </div>
 

@@ -34,7 +34,7 @@
         methods: {
           findMemberDetail(index){
             console.log(this.participantsData[index])
-            router.push({path: '/gradePage', params: {data:this.participantsData[index] }})
+            router.push({name: 'gradePage', params: {data:this.participantsData[index] }})
           },
           getParticipantsList(){
             getAllParticipantsMembers(this,this.participantsData)

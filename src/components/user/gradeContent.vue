@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">队长姓名：</label>
-                            <input type="text" v-model="competitionForm.captionName"  name="captionname"   >
+                            <input type="text" v-model="this.$route.params.data.captionName"  name="captionname"   >
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
@@ -18,36 +18,36 @@
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">专业年级：</label>
-                            <input type="text" v-model="competitionForm.zhuanYe" name="ZhuanYe"  >
+                            <input type="text" v-model="this.$route.params.data.zhuanYe" name="ZhuanYe"  >
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">学号：</label>
-                            <input type="text"  v-model="competitionForm.xueHao"  >
+                            <input type="text"  v-model="this.$route.params.data.xueHao"  >
                             <span></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">电话：</label>
-                            <input type="text" v-model="competitionForm.telephone" required="required" @keyup="TestReg($event) " name="Telephone" autocomplete="off" placeholder="（必填） 十一位数字">
+                            <input type="text" v-model="this.$route.params.data.telephone" required="required" @keyup="TestReg($event) " name="Telephone" autocomplete="off" placeholder="（必填） 十一位数字">
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">微信号：</label>
-                            <input type="text"  name="WeChat">
+                            <input type="text"  name="WeChat" v-model="this.$route.params.data.weChat">
                             <span></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">学校：</label>
-                            <input type="text" v-model="competitionForm.school"  name="School" >
+                            <input type="text" v-model="this.$route.params.data.school"  name="School" >
                             <span></span>
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">通讯地址：</label>
-                            <input type="text"  name="Adress" v-model="competitionForm.adress" required="required">
+                            <input type="text"  name="Adress" v-model="this.$route.params.data.adress" required="required">
                             <span></span>
                         </div>
                     </div>
@@ -68,12 +68,12 @@
                 <div class="row">
                     <div class="col-sm-5 row-p">
                         <label for="" class="form-label" style="display:inline-block">队伍名称：</label>
-                        <input type="text" name="DuiWuName" v-model="competitionForm.duiWuName"  style="display:inline-block" >
+                        <input type="text" name="DuiWuName" v-model="this.$route.params.data.duiWuName"  style="display:inline-block" >
                         <span style="display:inline-block"></span>
                     </div>
                     <div class="col-sm-5 row-p">
                         <label for="" class="form-label" style="display:inline-block">作品名称：</label>
-                        <input type="text"v-model="competitionForm.zuoPinName" name="ZuoPinName"  style="display:inline-block" >
+                        <input type="text"v-model="this.$route.params.data.zuoPinName" name="ZuoPinName"  style="display:inline-block" >
                         <span style="display:inline-block"></span>
                     </div>
                 </div>
@@ -162,37 +162,37 @@
             <h4 class="competition-titles">作品简介：（作品描述、限200字）</h4>
             <form role="form" class="other-desc" id="form5">
                 <div class="form-group">
-                    <textarea class="form-control" v-model="competitionForm.productIntroduce" rows="3" maxlength="200" style="resize: none" name="productIntroduce" ></textarea>
+                    <textarea class="form-control" v-model="this.$route.params.data.productIntroduce" rows="3" maxlength="200" style="resize: none" name="productIntroduce" ></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">技术方案：（限200字）</h4>
             <form role="form" class="other-desc" id="form6">
                 <div class="form-group">
-                    <textarea class="form-control" v-model="competitionForm.technologyCase" rows="3" maxlength="200" style="resize: none" name="technologyCase"></textarea>
+                    <textarea class="form-control" v-model="this.$route.params.data.technologyCase" rows="3" maxlength="200" style="resize: none" name="technologyCase"></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">技术路线：（限200字）</h4>
             <form role="form" class="other-desc" id="form7">
                 <div class="form-group">
-                    <textarea class="form-control" v-model="competitionForm.technologyWay" rows="3" maxlength="200" style="resize: none" name="technologyWay" ></textarea>
+                    <textarea class="form-control" v-model="this.$route.params.data.technologyWay" rows="3" maxlength="200" style="resize: none" name="technologyWay" ></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">创新点：（限100字）</h4>
             <form role="form" class="other-desc" id="form8">
                 <div class="form-group">
-                    <textarea class="form-control" v-model="competitionForm.aboutNews" rows="3" maxlength="200" style="resize: none" name="aboutNews" ></textarea>
+                    <textarea class="form-control" v-model="this.$route.params.data.aboutNews" rows="3" maxlength="200" style="resize: none" name="aboutNews" ></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">实现的功能和指标：（限200字）</h4>
             <form role="form" class="other-desc" id="form9">
                 <div class="form-group">
-                    <textarea class="form-control" v-model="competitionForm.aboutFunction" rows="3" maxlength="200" style="resize: none" name="aboutFunction" ></textarea>
+                    <textarea class="form-control" v-model="this.$route.params.data.aboutFunction" rows="3" maxlength="200" style="resize: none" name="aboutFunction" ></textarea>
                 </div>
             </form>
             <h4 class="competition-titles">测试演示情况：</h4>
             <form role="form" class="other-desc" id="form10">
                 <div class="form-group">
-                    <textarea class="form-control" v-model="competitionForm.aboutTest" rows="3" style="resize: none" name="aboutTest"></textarea>
+                    <textarea class="form-control" v-model="this.$route.params.data.aboutTest" rows="3" style="resize: none" name="aboutTest"></textarea>
                 </div>
             </form>
         </div>
@@ -207,7 +207,7 @@
               </form>
             </div>
         </div>
-      <div class="block">
+        <div class="block">
         <h4 class="competition-titles">附件</h4>
         <span class="demonstration">创新分</span>
         <el-slider
@@ -225,8 +225,7 @@
           show-input>
         </el-slider>
       </div>
-
-      <div class="row">
+        <div class="row">
         <span class="col-sm-2 col-xs-2"></span>
         <input type="submit" name="" value="确认提交" class="btn btn-lg btn-primary col-sm-8 col-xs-8 allSubmit" @click="PostTO()">
         <span class="col-sm-2 col-xs-2"></span>
@@ -239,6 +238,8 @@
 <script>
   import {postCompetitionRegistrationForm} from  '../../lib/vueHelper'
 export default {
+
+
   data(){
     return{
       checkInputs1:false,
@@ -274,9 +275,9 @@ export default {
         adress : '',
       },
       grade:{
-        newGrade:'',
-        practiceGrade:'',
-        otherGrade:'',
+        newGrade:0,
+        practiceGrade:0,
+        otherGrade:0,
       }
     }
   },
@@ -285,13 +286,11 @@ export default {
   },
   methods:{
 
-/*
     getParams(){
       let data = this.$route.params.data
       console.log("graContent:")
       console.log("haha"+data)
     },
-*/
 
 
 
@@ -301,6 +300,9 @@ export default {
   },
   mounted(){
 
+  },
+  watch:{
+    '$route':'getParams'
   }
 }
 </script>

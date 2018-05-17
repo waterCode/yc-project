@@ -77,7 +77,25 @@ export const postCompetitionRegistrationForm = (that, data) =>{
 
 
 export const submitTeamGrade = (that,data) =>{
-  network.postCompetitionData(sessionStorage.getItem('accessToken'),data)
+  network.submitTeamGrade(sessionStorage.getItem('accessToken'),data)
+}
+
+export const getExcel = (that) =>{
+  network.getExcel(sessionStorage.getItem('accessToken'))
+    .then(reponse =>{
+      if(!reponse){
+        return
+      }else {
+        let url = window.URL.createObjectURL(new Blob([reponse.data]))
+        let link = document.createElement('a')
+        link.style.display = 'none'
+        link.href = url
+        link.setAttribute('download','excel.xlsx')
+
+        document.body.appendChild(link)
+        link.click()
+      }
+    } )
 }
 
 

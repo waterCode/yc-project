@@ -40,7 +40,7 @@ export default new Router({
       component:joinCompetition
     },
     {
-      path:'/gradePage',
+      path:'/gradePage/:data',
       name:'gradePage',
       component:gradePage
     },

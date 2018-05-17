@@ -18,6 +18,17 @@ export default {
   submitTeamGrade(token,grade){
     Axios.defaults.headers.common['authorization'] = token
     return Axios.post(API.submitGrade,grade)
+  },
+
+  getExcel(token){
+    Axios.defaults.headers.common['authorization'] = token
+    //Axios.responseType = 'blob'
+   /* return Axios.get(API.registrationExcel)*/
+    return Axios({
+      method:'get',
+      url:API.registrationExcel,
+      responseType:'blob'
+    })
   }
 
 }

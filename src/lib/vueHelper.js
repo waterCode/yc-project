@@ -50,29 +50,37 @@ export const doRegister = (that, data) => {
       console.log(err)
     })*/
 }
-/*要求是管理者的token才能返回数据*/
-export const getAllMembers=(that,data) =>{
-  //拿到token
-}
+
 /*要求是管理者的token才能返回数据*/
 export const getAllParticipantsMembers=(that,data) =>{
-  //拿到token
-  network.getAllParticipantsMembers(sessionStorage.getItem('accessToken'))
-    .then(res =>{
-      console.log(data.toString())
-      console.log(res.data.toString())
-      res.data.forEach((e)=>{
-        data.push(e)
+    //拿到token
+    network.getAllParticipantsMembers(sessionStorage.getItem('accessToken'))
+      .then(res =>{
+
+        res.data.forEach((e)=>{
+          data.push(e)
+        })
+        console.log("allMember")
+        console.log(res.data)
       })
-      //Object.assign({},data,res.data)
-      //data[0].duiWuName= res.data[0].duiWuName
-    })
+  }
 
-
-}
+  export const getAllMembers=(that,data) =>{
+    //拿到token
+    network.getAllMembers(sessionStorage.getItem('accessToken'))
+      .then(res =>{
+        res.data.forEach((e)=>{
+          data.push(e)
+        })
+      })
+  }
 
 export const postCompetitionRegistrationForm = (that, data) =>{
   network.postCompetitionData(data)
+}
+
+export const postJoinUsData = (that, data) =>{
+  network.postJoinUsData(data)
 }
 
 

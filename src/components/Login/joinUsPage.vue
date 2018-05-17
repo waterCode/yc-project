@@ -28,28 +28,28 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="username" id="username" placeholder="姓名"    required>
+                      <input type="text" class="form-control" v-model="joinUsForm.name" name="username" id="username" placeholder="姓名"    required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="school" id="school" placeholder="学院"   required>
+                      <input type="text" class="form-control" name="school" v-model="joinUsForm.college" id="school" placeholder="学院"   required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="studentid" placeholder="学号" id="studentid" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+                      <input type="text" class="form-control" name="studentid" v-model="joinUsForm.studentNum" placeholder="学号" id="studentid" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="perfession_class" placeholder="专业班级（如：15信息工程*班）" id="perfession_class"   required>
+                      <input type="text" class="form-control" name="perfession_class" v-model="joinUsForm.class" placeholder="专业班级（如：15信息工程*班）" id="perfession_class"   required>
                     </div>
                   </div>
 
@@ -58,21 +58,28 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="qq" placeholder="qq" id="qq" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+                      <input type="text" class="form-control" name="qq" v-model="joinUsForm.qq" placeholder="qq" id="qq" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="telephone" placeholder="联系方式" id="telephone" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+                      <input type="text" class="form-control" name="qqMail" v-model="joinUsForm.qqEmail" placeholder="qq邮箱" id="qqMail"  required>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <select class="form-control" name="major" id="major">
+                      <input type="text" class="form-control" name="telephone" placeholder="手机号码" v-model="joinUsForm.telephone" id="telephone" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-1"></label>
+                    <div class="col-md-10">
+                      <select class="form-control" v-model="joinUsForm.group" name="major" id="major">
                         <option value="飞控组">飞控组</option>
                         <option value="机器人组">机器人组</option>
                         <option value="嵌入式组">嵌入式组</option>
@@ -88,7 +95,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <textarea class="form-control" rows="3" name="self_introduction" placeholder="自我介绍" id="self_introduction"  maxlength="100"  required></textarea>
+                      <textarea class="form-control" rows="3" v-model="joinUsForm.introduce" name="self_introduction" placeholder="自我介绍" id="self_introduction"  maxlength="100"  required></textarea>
                     </div>
                   </div>
 
@@ -96,14 +103,14 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <textarea class="form-control" rows="3" name="skill" placeholder="目前掌握技能" id="skill"  maxlength="100"  required></textarea>
+                      <textarea class="form-control" rows="3" name="skill"v-model="joinUsForm.skill" placeholder="目前掌握技能" id="skill"  maxlength="100"  required></textarea>
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-       <textarea class="form-control" rows="3" name="experience" placeholder="项目经验" id="experience"  maxlength="100"
+       <textarea class="form-control" rows="3" name="experience" v-model="joinUsForm.experience" placeholder="项目经验" id="experience"  maxlength="100"
                  required></textarea>
                     </div>
                   </div>
@@ -111,7 +118,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <textarea class="form-control" rows="3" name="honor" placeholder="获奖情况" id="honor"  maxlength="100"  required></textarea>
+                      <textarea class="form-control" rows="3" name="honor" placeholder="获奖情况" v-model="joinUsForm.award" id="honor"  maxlength="100"  required></textarea>
                     </div>
                   </div>
 
@@ -130,7 +137,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <button name="submit" id="submit" class="btn btn-lg btn-primary btn-block" type="submit">提交</button>
+                      <button @click ='this.joinUs()' class="btn btn-lg btn-primary btn-block" >提交</button>
                     </div>
                   </div>
 
@@ -379,8 +386,35 @@
 </template>
 
 <script>
+  import {postJoinUsData} from '../../lib/vueHelper'
     export default {
-        name: "join-us-page"
+        name: "join-us-page",
+
+      methods:{
+        joinUs(){
+          console.log("begin post joinUs data")
+          postJoinUsData(this,this.joinUsForm)
+        }
+      },
+      data(){
+          return{
+            joinUsForm:{
+              name:'',
+              college:'',
+              studentNum:'',
+              class:'',
+              qq:'',
+              qqEmail:'',
+              telephone:'',
+              group:'',
+              introduce:'',
+              skill:'',
+              experience:'',
+              award:'',
+
+            }
+          }
+      }
     }
 </script>
 

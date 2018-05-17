@@ -11,10 +11,18 @@ export default {
   postCompetitionData(data){
     return Axios.post(API.competition, data)
   },
+  postJoinUsData(data){
+    return Axios.post(API.joinUs, data)
+  },
   getAllParticipantsMembers(data){
     Axios.defaults.headers.common['authorization'] = data
     return Axios.get(API.participantInfo)
   },
+  getAllMembers(token){
+    Axios.defaults.headers.common['authorization'] = token
+    return Axios.get(API.allMembers)
+  },
+
   submitTeamGrade(token,grade){
     Axios.defaults.headers.common['authorization'] = token
     return Axios.post(API.submitGrade,grade)

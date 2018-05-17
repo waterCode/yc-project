@@ -8,48 +8,54 @@
       prop="id"
       label="id"/>
     <el-table-column
-      prop="name"
+      prop="userName"
       label="姓名"/>
     <el-table-column
-      label="操作">
+      label="管理员级别">
       <template slot-scope="scope">
-        <el-button @click= "findMemberDetail(scope.$index,membersData)"type="text" size="small">查看简历</el-button>
+        <el-select v-model="haha" placeholder="请选择">
+          <el-option
+            v-for="item in options"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value">
+          </el-option>
+        </el-select>
       </template>
 
     </el-table-column>
   </el-table>
 </template>
 <script>
-  import { doRegister } from '../../lib/vueHelper'
+  import { getAllMembers } from '../../lib/vueHelper'
     export default {
         name: "member-list",
         created(){
-          getMemberList()
+          this.getMemberList()
         },
         methods: {
-          findMemberDetail(index,data){
 
-          },
           getMemberList(){
-
+            getAllMembers(this,this.membersData)
           }
         },
         data(){
           return {
-            membersData:[{
-              id:'1',
-              name: '种哈哈1'
+            membersData:[
+            ],
+
+            options:[{
+              value:'选项1',
+              label:'成员'
             },{
-              id:'1',
-              name: '种哈哈2'
+              value:'选项2',
+              label:'管理员'
             },{
-              id:'1',
-              name: '种哈哈3'
-            },{
-              id:'1',
-              name: '种哈哈4'
-            }
-            ]
+              value:'选项3',
+              label:'超级管理员'
+            },
+            ],
+            haha :'成员'
           }
         }
     }

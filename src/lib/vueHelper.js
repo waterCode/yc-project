@@ -19,8 +19,10 @@ export const  doLogin = (that, data) => {
       console.log("code"+res.data.result)
       if (res.data.result) {
         sessionStorage.setItem('accessToken', res.data.token)
+        sessionStorage.setItem('currentUserName', res.data.userName)
         showMsg(that, true, '登录成功', 'success')
-        router.push({path: '/', params: {username: res.data.username}})
+        router.push({name: 'homePage', params: {username: res.data.userName}})
+
       } else {
         showMsg(that, true, '登录失败，账号或密码错误', 'error')
       }
@@ -77,10 +79,24 @@ export const getAllParticipantsMembers=(that,data) =>{
 
 export const postCompetitionRegistrationForm = (that, data) =>{
   network.postCompetitionData(data)
+    .then(res =>{
+      if(res.data.result){
+        //弹窗成功并跳转
+        showMsg(that, true, '提交成功', 'success')
+        router.push({name: 'homePage'})
+      }
+    })
 }
 
 export const postJoinUsData = (that, data) =>{
   network.postJoinUsData(data)
+    .then(res =>{
+      if(res.data.result){
+        //弹窗成功并跳转
+        showMsg(that, true, '提交成功', 'success')
+        router.push({name: 'homePage'})
+      }
+    })
 }
 
 

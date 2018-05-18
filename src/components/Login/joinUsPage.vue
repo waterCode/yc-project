@@ -9,7 +9,7 @@
 
           <div class="row"><div class="col-md-12"></div></div>
 
-          <form class="form-horizontal dowebok">
+          <div class="form-horizontal dowebok">
             <div class="form-group">
               <label class="col-md-12"></label>
               <label class="col-md-12"></label>
@@ -28,7 +28,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" v-model="joinUsForm.name" name="username" id="username" placeholder="姓名"    required>
+                      <input type="text" class="form-control" v-model="joinUsForm.joinerName" name="username" id="username" placeholder="姓名"    required>
                     </div>
                   </div>
 
@@ -49,7 +49,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="perfession_class" v-model="joinUsForm.class" placeholder="专业班级（如：15信息工程*班）" id="perfession_class"   required>
+                      <input type="text" class="form-control" name="perfession_class" v-model="joinUsForm.className" placeholder="专业班级（如：15信息工程*班）" id="perfession_class"   required>
                     </div>
                   </div>
 
@@ -58,7 +58,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <input type="text" class="form-control" name="qq" v-model="joinUsForm.qq" placeholder="qq" id="qq" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
+                      <input type="text" class="form-control" name="qq" v-model="joinUsForm.qqNum" placeholder="qq" id="qq" onkeyup="this.value=this.value.replace(/[^\d]/g,'') " onafterpaste="this.value=this.value.replace(/[^\d]/g,'') " required>
                     </div>
                   </div>
 
@@ -79,7 +79,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <select class="form-control" v-model="joinUsForm.group" name="major" id="major">
+                      <select class="form-control" v-model="joinUsForm.groupName" name="major" id="major">
                         <option value="飞控组">飞控组</option>
                         <option value="机器人组">机器人组</option>
                         <option value="嵌入式组">嵌入式组</option>
@@ -95,7 +95,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <textarea class="form-control" rows="3" v-model="joinUsForm.introduce" name="self_introduction" placeholder="自我介绍" id="self_introduction"  maxlength="100"  required></textarea>
+                      <textarea class="form-control" rows="3" v-model="joinUsForm.introduceDescription" name="self_introduction" placeholder="自我介绍" id="self_introduction"  maxlength="100"  required></textarea>
                     </div>
                   </div>
 
@@ -149,7 +149,7 @@
 
 
             </div>
-          </form>
+          </div>
 
         </div>
       </div>
@@ -399,15 +399,15 @@
       data(){
           return{
             joinUsForm:{
-              name:'',
+              joinerName:'',
               college:'',
               studentNum:'',
-              class:'',
-              qq:'',
+              className:'',
+              qqNum:'',
               qqEmail:'',
               telephone:'',
-              group:'',
-              introduce:'',
+              groupName:'',
+              introduceDescription:'',
               skill:'',
               experience:'',
               award:'',

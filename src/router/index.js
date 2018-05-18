@@ -8,6 +8,7 @@ import joinCompetition from '@/components/user/joinCompetition'
 import gradePage from '@/components/user/gradePage'
 import memberListPage from '@/components/admin/memberList'
 import participantList from '@/components/admin/participantList'
+import userCenterPage from '@/components/admin/userCenterPage'
 
 
 Vue.use(Router)
@@ -53,6 +54,11 @@ export default new Router({
       path:'/participantList',
       name:'participantList',
       component:participantList
+    },
+    {
+      path:'/userCenterPage',
+      name:'userCenterPage',
+      component:userCenterPage
     }
 
 

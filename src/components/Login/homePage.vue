@@ -5,14 +5,14 @@
       <div class="none">
         <div class="logo"><img src="../../assets/img/logo.png" width=100% height=100%></div>
       </div>
-     <!-- <div class="others">
+      <div class="others">
         <div class="name"><a href="#">YC 勇创</a></div>
         <div class="othername"><a href="#">主页</a></div>
         <div class="othername"><router-link to="/joinUsPage">加入我们</router-link></div>
         <div class="othername"><router-link to="/joinCompetition">竞赛报名</router-link></div>
         <div class="loginName"><router-link to="/login">{{loginName}}</router-link></div>
 
-      </div>-->
+      </div>
     </div>
 
     <div class="container">
@@ -199,26 +199,29 @@
 <script>
   export default {
     name: "home-page",
-
+    created(){
+      console.log("created")
+      this.checkLogin()
+    },
     data(){
       return {
         loginName:'登陆',
-        userNamed:this.$route.params.username
+
+
       }
     },
     methods:{
       checkLogin(){
-        if(this.userNamed !== undefined){
-          this.loginName = this.userNamed
+       let name = sessionStorage.getItem("currentUserName")
+        if(name == null){
+         this.loginName = '登陆'
+        }else {
+         this.loginName = name
         }
       }
     },
-    watch:{
-      userNamed(val,oldVal){
-        console.log("newVuale"+val)
-        console.log("oldVuale"+oldVal)
-  }
-    }
+
+
   }
 </script>
 

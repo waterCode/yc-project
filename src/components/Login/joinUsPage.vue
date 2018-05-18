@@ -9,7 +9,7 @@
 
           <div class="row"><div class="col-md-12"></div></div>
 
-          <form class="form-horizontal dowebok" role="form" id="ajaxForm">
+          <form class="form-horizontal dowebok">
             <div class="form-group">
               <label class="col-md-12"></label>
               <label class="col-md-12"></label>
@@ -137,7 +137,7 @@
                   <div class="form-group">
                     <label class="col-md-1"></label>
                     <div class="col-md-10">
-                      <button @click ='this.joinUs()' class="btn btn-lg btn-primary btn-block" >提交</button>
+                      <button @click ='joinUs()' class="btn btn-lg btn-primary btn-block" >提交</button>
                     </div>
                   </div>
 

@@ -5,13 +5,14 @@
       <div class="none">
         <div class="logo"><img src="../../assets/img/logo.png" width=100% height=100%></div>
       </div>
-      <div class="others">
+     <!-- <div class="others">
         <div class="name"><a href="#">YC 勇创</a></div>
         <div class="othername"><a href="#">主页</a></div>
         <div class="othername"><router-link to="/joinUsPage">加入我们</router-link></div>
         <div class="othername"><router-link to="/joinCompetition">竞赛报名</router-link></div>
-        <div class="othername"><router-link to="/login">管理员登陆</router-link></div>
-      </div>
+        <div class="loginName"><router-link to="/login">{{loginName}}</router-link></div>
+
+      </div>-->
     </div>
 
     <div class="container">
@@ -20,13 +21,7 @@
         <source src="../../assets/video/2.mp4" type="video/webm">
         <source src="../../assets/video/2.mp4" type="video/ogg">
       </video>
-      <div class="center">
-        <div class="container-yc">YC 勇创
-        </div>
-        <div class="container-ad">为有能力的人提供平台
-          <!--<br>为有贡献的人报以回馈</br>-->
-        </div>
-      </div>
+
     </div>
 
     <div class="about-us">
@@ -203,7 +198,27 @@
 
 <script>
   export default {
-    name: "home-page"
+    name: "home-page",
+
+    data(){
+      return {
+        loginName:'登陆',
+        userNamed:this.$route.params.username
+      }
+    },
+    methods:{
+      checkLogin(){
+        if(this.userNamed !== undefined){
+          this.loginName = this.userNamed
+        }
+      }
+    },
+    watch:{
+      userNamed(val,oldVal){
+        console.log("newVuale"+val)
+        console.log("oldVuale"+oldVal)
+  }
+    }
   }
 </script>
 

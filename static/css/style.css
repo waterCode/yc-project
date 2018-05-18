@@ -13,6 +13,7 @@
   .others{width: 88%;height: 50px;float: left;}
   .name{width: 13%;height: 50px;float: left;color: #ffffff;font-size: 25px;line-height: 50px;}
   .othername{width: 11%;height: 50px;float: left;color: #ffffff;line-height: 50px;text-align: center;font-size: 18px;}
+  .loginName{width: 11%;height: 50px;float: right;color: #ffffff;line-height: 50px;text-align: center;font-size: 18px;}
   .wantsearch{width: 17%;height: 25px;margin-top: 15px;float: left;}
   .search{width: 20px;height: 20px;margin-top: 2px;float: right;cursor:pointer;}
   .search input{width: 20px;height: 20px;border: none;background-image: url(../../src/assets/img/03.png);cursor:pointer; }

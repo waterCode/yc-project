@@ -58,7 +58,17 @@ export default new Router({
     {
       path:'/userCenterPage',
       name:'userCenterPage',
-      component:userCenterPage
+      component:userCenterPage,
+      children:[
+        {
+          path:'a',
+          component:participantList
+          },
+          {
+          path:'b',
+          component:participantList
+          }
+          ]
     }
 
 

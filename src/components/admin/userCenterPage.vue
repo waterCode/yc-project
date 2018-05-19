@@ -15,7 +15,7 @@
 
     </el-menu>
   <div>
-    <router-view></router-view>
+    <router-view/>
   </div>
   </div>
 </template>
@@ -33,7 +33,7 @@
         console.log(key, keyPath);
         if(key == 1){
           console.log("1 key")
-          this.$router.push('/participantList');
+          this.$router.push('/userCenterPage/a');
         }else if(key ==2){
 
         }else {

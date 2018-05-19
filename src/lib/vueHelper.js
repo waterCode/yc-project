@@ -84,6 +84,19 @@ export const postCompetitionRegistrationForm = (that, data) =>{
         //弹窗成功并跳转
         showMsg(that, true, '提交成功', 'success')
         router.push({name: 'homePage'})
+      }else {
+        showMsg(that, true, '提交失败', 'failed')
+      }
+    })
+}
+
+export const postAllCompetitionRegistrationForm = (that, dataForm) =>{
+  network.postAllCompetitionData(dataForm)
+    .then(res =>{
+      if(res.data.result){
+        //弹窗成功并跳转
+        showMsg(that, true, '提交成功', 'success')
+        router.push({name: 'homePage'})
       }
     })
 }

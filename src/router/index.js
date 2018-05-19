@@ -66,7 +66,7 @@ export default new Router({
           },
           {
           path:'b',
-          component:participantList
+          component:memberListPage
           }
           ]
     }

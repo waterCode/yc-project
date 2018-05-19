@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">微信号：</label>
-                            <input type="text"  required="required" @keyup="TestReg($event)" name="WeChat" autocomplete="off" placeholder="（必填）">
+                            <input type="text"  required="required" v-model="competitionForm.weChat" @keyup="TestReg($event)" name="WeChat" autocomplete="off" placeholder="（必填）">
                             <span></span>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
               <form action="" enctype="multipart/form-data" id="form2">
                   <div class="caption-pic">
                    <img src="" class="caption-img">
-                   <input type="file" name="caption-photo" class="caption-input" @change="readImg" ref="inputer" data-uploadtype="photo"/>
+                   <input type="file" name="photo" class="caption-input" @change="readImg($event)" ref="inputer" data-uploadtype="photo"/>
                  </div>
                  <p>请上传队长照片</p>
               </form>
@@ -237,7 +237,7 @@
 </template>
 
 <script>
-  import {postCompetitionRegistrationForm} from  '../../lib/vueHelper'
+  import {postCompetitionRegistrationForm,postAllCompetitionRegistrationForm} from  '../../lib/vueHelper'
 export default {
   data(){
     return{
@@ -252,7 +252,7 @@ export default {
       myday:0,
       myyear:0,
       mymonth:0,
-      formdataPic:{},
+      formdataPic:'',
       formdataWenjian1:{},
       formdataWenjian2:{},
       Alldata:{},
@@ -508,7 +508,8 @@ export default {
          $(".caption-img").css({"width":"118px","height":"144px"});
          this.check2=true
        }
-       this.formdataPic = new FormData(form1)
+       this.formdataPic = e.target.files[0]
+       //this.formdataPic = new FormData(form1)
     },
     GetWenjian1(el){
       var thisInput = el.currentTarget
@@ -519,7 +520,7 @@ export default {
         thisInput.value=""
       }
       var one = document.getElementsByTagName('form')[name="documentForm1"]
-      this.formdataWenjian1 = new FormData(one)
+      this.formdataWenjian1 = el.target.files[0]
     },
     GetWenjian2(el){
       var thisInput = el.currentTarget
@@ -530,19 +531,40 @@ export default {
         thisInput.value=""
       }
       var two = document.getElementsByTagName('form')[name="documentForm1"]
-      this.formdataWenjian2 = new FormData(two)
+      this.formdataWenjian2 = el.target.files[0]
     },
 
     PostTO(){
       console.log("postT0")
-      if(this.myCheck()){
-        postCompetitionRegistrationForm(this,this.competitionForm)
-        console.log("alldata is:"+this.competitionForm)
+      if(this.myCheck()) {
+        //postCompetitionRegistrationForm(this,this.competitionForm)
+        //console.log("alldata is:"+this.competitionForm)
         /*if(this.postDocument1()&&this.postDocument2()&&this.postCaptionPic()&&this.postOthers()){
           alert("报名成功！")
         }else {
           alert("报名失败！")
         }*/
+        //试下上传文件
+        let data = new FormData();
+        data.append('uploadfile', this.formdataPic)
+        data.append('uploadfile', this.formdataWenjian1)
+        data.append('uploadfile', this.formdataWenjian2)
+        data.append("captionName", this.competitionForm.captionName)
+        data.append("zhuanYe", this.competitionForm.zhuanYe)
+        data.append("xueHao", this.competitionForm.xueHao)
+        data.append("telephone", this.competitionForm.telephone)
+        data.append("weChat", this.competitionForm.weChat)
+        data.append("school", this.competitionForm.school)
+        data.append("duiWuName", this.competitionForm.duiWuName)
+        data.append("zuoPinName", this.competitionForm.zuoPinName)
+        data.append("aboutTest", this.competitionForm.aboutTest)
+        data.append("aboutFunction", this.competitionForm.aboutFunction)
+        data.append("aboutNews", this.competitionForm.aboutNews)
+        data.append("technologyWay", this.competitionForm.technologyWay)
+        data.append("technologyCase", this.competitionForm.technologyCase)
+        data.append("productIntroduce", this.competitionForm.productIntroduce)
+        data.append("adress", this.competitionForm.adress)
+        postAllCompetitionRegistrationForm(this, data)
       }
     }
   },

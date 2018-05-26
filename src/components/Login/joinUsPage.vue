@@ -127,7 +127,7 @@
                     <div class="col-md-10">
                       <div class="checkbox">
                         <span style="line-height:31px">是否服从调剂：</span>
-                        <label><input type="checkbox" name="obey" id="obey" value="1">是</label>
+                        <label><input type="checkbox" v-model="joinUsForm.isAdjust" name="obey" id="obey" value="1">是</label>
                       </div>
                     </div>
                   </div>
@@ -411,7 +411,7 @@
               skill:'',
               experience:'',
               award:'',
-
+              isAdjust:false
             }
           }
       }

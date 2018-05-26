@@ -21,7 +21,7 @@ export const  doLogin = (that, data) => {
         sessionStorage.setItem('accessToken', res.data.token)
         sessionStorage.setItem('currentUserName', res.data.userName)
         showMsg(that, true, '登录成功', 'success')
-        router.push({name: 'homePage', params: {username: res.data.userName}})
+        router.push({name: 'honpnmePage', params: {username: res.data.userName}})
 
       } else {
         showMsg(that, true, '登录失败，账号或密码错误', 'error')
@@ -36,21 +36,17 @@ export const  doLogin = (that, data) => {
 export const doRegister = (that, data) => {
 
   network.register(data)
-
-  /*api.register(data)
-    .then(res => {
-      if (res.data.code === 0) {
-        showMsg(that, true, '注册成功', 'success')
-        router.push({name: 'Login'})
-      } else if (res.data.code === 88) {
-        showMsg(that, true, '验证码错误', 'error')
-      } else if (res.data.code === 99) {
-        showMsg(that, true, '用户名已被注册', 'error')
+    .then(res =>{
+      if(res.data.result){
+        //注册成功
+        showMsg(that, true, res.data.message, 'success')
+        router.push({name:'Login'})//跳转至登陆界面
+      }else {
+        showMsg(that, true, res.data.message, 'error')
       }
     })
-    .catch(err => {
-      console.log(err)
-    })*/
+
+
 }
 
 /*要求是管理者的token才能返回数据*/
@@ -115,7 +111,14 @@ export const postJoinUsData = (that, data) =>{
 
 export const submitTeamGrade = (that,data) =>{
   network.submitTeamGrade(sessionStorage.getItem('accessToken'),data)
-}
+};
+
+
+export const getRegistrationById = (that) =>{
+  network.getRegistrationById(sessionStorage.getItem('participantId'))//拿到id进行查询
+};
+
+
 
 export const getExcel = (that) =>{
   network.getExcel(sessionStorage.getItem('accessToken'))

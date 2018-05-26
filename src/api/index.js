@@ -11,6 +11,9 @@ export default {
   postCompetitionData(data){
     return Axios.post(API.competition, data)
   },
+  getRegistrationById(id){
+    return Axios.post(API.competition, id)
+  },
   postAllCompetitionData(dataForm){
     let config = {
       headers:{'Content-Type':'multipart/form-data'}

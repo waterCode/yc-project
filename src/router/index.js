@@ -18,7 +18,8 @@ export default new Router({
     {
       path: '/',
       name: 'homePage',
-      component: homePage
+      component: homePage,
+
     },
     {
       path: '/joinUsPage',

@@ -41,7 +41,10 @@
     },
     methods: {
       findMemberDetail(index) {
-        console.log(this.participantsData[index])
+        console.log(this.participantsData[index]);
+        //将选中的id存session里面
+        sessionStorage.setItem("participantId",this.participantsData[index].id);
+        console.log("id:"+this.participantsData[index].id);
         router.push({name: 'gradePage', params: {data: this.participantsData[index]}})
       },
       getParticipantsList() {

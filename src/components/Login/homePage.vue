@@ -10,7 +10,19 @@
         <div class="othername"><a href="#">主页</a></div>
         <div class="othername"><router-link to="/joinUsPage">加入我们</router-link></div>
         <div class="othername"><router-link to="/joinCompetition">竞赛报名</router-link></div>
-        <div class="loginName"><router-link to="/login">{{loginName}}</router-link></div>
+        <div class="loginName" v-show="isLoginButtonShow"><router-link to="/login">{{loginName}}</router-link></div>
+        <div class="loginName" v-show="isUserCenterShow">
+          <el-dropdown @command="handleCommand">
+          <span class="el-dropdown-link ">
+              {{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+            <el-dropdown-menu slot="dropdown">
+              <el-dropdown-item command="a">个人中心</el-dropdown-item>
+              <el-dropdown-item command="b">退出登陆</el-dropdown-item>
+            </el-dropdown-menu>
+          </el-dropdown>
+
+        </div>
 
       </div>
     </div>
@@ -206,7 +218,9 @@
     data(){
       return {
         loginName:'登陆',
-
+        currentUserName:'',
+        isUserCenterShow:false,
+        isLoginButtonShow:true
 
       }
     },
@@ -215,10 +229,24 @@
        let name = sessionStorage.getItem("currentUserName")
         if(name == null){
          this.loginName = '登陆'
+          this.isLoginButtonShow = true
+          this.isUserCenterShow = false
         }else {
-         this.loginName = name
+         this.currentUserName = name
+          this.isLoginButtonShow = false
+          this.isUserCenterShow = true
         }
-      }
+      },
+     handleCommand(command){
+        if(command == 'a'){
+          this.$router.push('/userCenterPage');
+        }else {
+          sessionStorage.removeItem("accessToken")
+          sessionStorage.removeItem("currentUserName")
+          this.isLoginButtonShow = true
+          this.isUserCenterShow = false
+        }
+    }
     },
 
 

@@ -35,7 +35,7 @@
           console.log("1 key")
           this.$router.push('/userCenterPage/a');
         }else if(key ==2){
-
+          this.$router.push('/userCenterPage/b');
         }else {
 
         }

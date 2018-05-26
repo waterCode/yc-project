@@ -197,7 +197,7 @@
                 </div>
             </form>
         </div>
-        <div class="container competition-wenxin">
+      <!--  <div class="container competition-wenxin">
             <h4 class="competition-titles">附件</h4>
             <div class="row" style="margin:20px;">
               <form action="" enctype="multipart/form-data" name="documentForm1">
@@ -207,9 +207,9 @@
                 <input type="file" name="" value="上传附件" style="display:inline-block;margin-left:30px;" class="col-xs-5" >
               </form>
             </div>
-        </div>
+        </div>-->
         <div class="block">
-        <h4 class="competition-titles">附件</h4>
+        <h4 class="competition-titles">评分</h4>
         <span class="demonstration">创新分</span>
         <el-slider
           v-model="grade.newGrade"
@@ -237,8 +237,14 @@
 </template>
 
 <script>
-  import {submitTeamGrade} from  '../../lib/vueHelper'
+  import {submitTeamGrade,getRegistrationById} from  '../../lib/vueHelper'
 export default {
+
+  created(){
+    //获取id进行查询
+    this.id = sessionStorage.getItem("participantId")
+    this.getData()
+  },
 
 
   data(){
@@ -254,6 +260,7 @@ export default {
       myday:0,
       myyear:0,
       mymonth:0,
+      id:0,
       formdataPic:{},
       formdataWenjian1:{},
       formdataWenjian2:{},
@@ -292,6 +299,9 @@ export default {
       console.log("submit")
       console.log(this.grade)
       submitTeamGrade(this,this.grade)
+    },
+    getData(){
+      getRegistrationById(this)
     }
 
 

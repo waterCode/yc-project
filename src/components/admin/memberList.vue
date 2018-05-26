@@ -13,7 +13,7 @@
     <el-table-column
       label="管理员级别">
       <template slot-scope="scope">
-        <el-select v-model="haha" placeholder="请选择">
+        <el-select v-model="scope.row.roles" placeholder="请选择">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -46,13 +46,13 @@
 
             options:[{
               value:'选项1',
-              label:'成员'
+              label:'member'
             },{
               value:'选项2',
-              label:'管理员'
+              label:'admin'
             },{
               value:'选项3',
-              label:'超级管理员'
+              label:'superAdmin'
             },
             ],
             haha :'成员'

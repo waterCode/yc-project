@@ -11,5 +11,6 @@ export default {
   participantInfo: `${API_ROOT}secure/participants`,
   allMembers: `${API_ROOT}secure/users`,
   submitGrade: `${API_ROOT}secure/submitGrade`,
-  registrationExcel: `${API_ROOT}secure/getExcel`
+  registrationExcel: `${API_ROOT}secure/getExcel`,
+  registrationById: `${API_ROOT}secure/getRegistrationForm`
 }

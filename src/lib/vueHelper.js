@@ -21,7 +21,7 @@ export const  doLogin = (that, data) => {
         sessionStorage.setItem('accessToken', res.data.token)
         sessionStorage.setItem('currentUserName', res.data.userName)
         showMsg(that, true, '登录成功', 'success')
-        router.push({name: 'honpnmePage', params: {username: res.data.userName}})
+        router.push({name: 'homePage'})
 
       } else {
         showMsg(that, true, '登录失败，账号或密码错误', 'error')

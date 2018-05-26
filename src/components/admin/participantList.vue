@@ -3,7 +3,7 @@
   <div>
     <el-table
       :data="participantsData"
-      height="400">
+      >
 
       <el-table-column
         prop="id"

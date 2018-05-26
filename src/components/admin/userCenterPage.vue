@@ -23,6 +23,9 @@
 <script>
   export default {
     name: "user-center-page",
+    created(){
+      this.$router.push('/userCenterPage/a');
+    },
     data() {
       return {
         activeIndex2: '1'

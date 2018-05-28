@@ -87,61 +87,61 @@
                     </tr>
                     <tr>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates1" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" v-model="competitionForm.teamMateOneName" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates1" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates1_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates1_ZhuanYe" v-model="competitionForm.teamMateOneClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates1_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" v-model="competitionForm.teamMateOneTelephone" name="Teammates1_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates2" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" v-model="competitionForm.teamMateTwoName" style="display:inline-block" name="Teammates2" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates2_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates2_ZhuanYe"  v-model="competitionForm.teamMateTwoClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates2_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" required @keyup="TestReg($event)" v-model="competitionForm.teamMateTwoTelephone" name="Teammates2_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates3" autocomplete="off" placeholder="（选填）">
+                          <input type="text"  v-model="competitionForm.teamMateThreeName"class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates3" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates3_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates3_ZhuanYe" v-model="competitionForm.teamMateThreeClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates3_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" class="form-control" v-model="competitionForm.teamMateThreeTelephone" required @keyup="TestReg($event)" name="Teammates3_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates4" autocomplete="off" placeholder="（选填）">
+                          <input type="text" v-model="competitionForm.teamMateFourName" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates4" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" name="Teammates4_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                          <input type="text" name="Teammates4_ZhuanYe"v-model="competitionForm.teamMateFourClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                         <td>
-                          <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates4_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                          <input type="text" v-model="competitionForm.teamMateFourTelephone" class="form-control" required @keyup="TestReg($event)" name="Teammates4_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
                     </tr>
-                    <tr>
+                 <!--   <tr>
                         <td>
                           <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates5" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
@@ -154,7 +154,7 @@
                           <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates5_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
                           <span style="display:inline-block;margin-left:6px;"></span>
                         </td>
-                    </tr>
+                    </tr>-->
                 </table>
             </form>
         </div>
@@ -272,6 +272,20 @@ export default {
         technologyCase : '',
         productIntroduce : '',
         adress : '',
+        teamMateOneName:'',
+        teamMateOneClass:'',
+        teamMateOneTelephone:'',
+        teamMateTwoName:'',
+        teamMateTwoClass:'',
+        teamMateTwoTelephone:'',
+        teamMateThreeName:'',
+        teamMateThreeClass:'',
+        teamMateThreeTelephone:'',
+        teamMateFourName:'',
+        teamMateFourClass:'',
+        teamMateFourTelephone:'',
+
+
 
 
       }
@@ -564,6 +578,22 @@ export default {
         data.append("technologyCase", this.competitionForm.technologyCase)
         data.append("productIntroduce", this.competitionForm.productIntroduce)
         data.append("adress", this.competitionForm.adress)
+        data.append("teamMateOneName", this.competitionForm.teamMateOneName)
+        data.append("teamMateOneClass", this.competitionForm.teamMateOneClass)
+        data.append("teamMateOneTelephone", this.competitionForm.teamMateOneTelephone)
+
+        data.append("teamMateTwoName", this.competitionForm.teamMateTwoName)
+        data.append("teamMateTwoClass", this.competitionForm.teamMateTwoClass)
+        data.append("teamMateTwoTelephone", this.competitionForm.teamMateTwoTelephone)
+
+        data.append("teamMateThreeName", this.competitionForm.teamMateThreeName)
+        data.append("teamMateThreeClass", this.competitionForm.teamMateThreeClass)
+        data.append("teamMateThreeTelephone", this.competitionForm.teamMateThreeTelephone)
+
+        data.append("teamMateFourName", this.competitionForm.teamMateFourName)
+        data.append("teamMateFourClass", this.competitionForm.teamMateFourClass)
+        data.append("teamMateFourTelephone", this.competitionForm.teamMateFourTelephone)
+
         postAllCompetitionRegistrationForm(this, data)
       }
     }

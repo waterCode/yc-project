@@ -114,9 +114,45 @@ export const submitTeamGrade = (that,data) =>{
 };
 
 
-export const getRegistrationById = (that) =>{
-  network.getRegistrationById(sessionStorage.getItem('participantId'))//拿到id进行查询
-};
+export const getRegistrationById = (that,data) =>{
+  //拿到id进行查询
+  network.getRegistrationById(sessionStorage.getItem('participantId'),sessionStorage.getItem('accessToken'))
+    .then(reponse =>{
+      let result = reponse.data.registrationForm;
+      data.captionName = result.captionName;
+      data.zhuanYe = result.zhuanYe;
+      data.xueHao = result.xueHao;
+      data.telephone = result.telephone
+      data.weChat = result.weChat
+      data.school = result.school
+      data.duiWuName = result.duiWuName
+      data.zuoPinName = result.zuoPinName
+      data.aboutTest = result.aboutTest
+      data.aboutFunction = result.aboutFunction
+      data.aboutNews = result.aboutNews
+      data.technologyWay = result.technologyWay
+      data.technologyCase = result.technologyCase
+      data.productIntroduce = result.productIntroduce
+      data.adress = result.adress
+
+      data.teamMateOneName = result.teamMateOneName
+      data.teamMateOneClass = result.teamMateOneClass
+      data.teamMateOneTelephone = result.teamMateOneTelephone
+      data.teamMateTwoName = result.teamMateTwoName
+      data.teamMateTwoClass = result.teamMateTwoClass
+      data.teamMateTwoTelephone = result.teamMateTwoTelephone
+      data.teamMateThreeName = result.teamMateThreeName
+      data.teamMateThreeClass = result.teamMateThreeClass
+      data.teamMateThreeTelephone = result.teamMateThreeTelephone
+      data.teamMateFourName = result.teamMateFourName
+      data.teamMateFourClass = result.teamMateFourClass
+      data.teamMateFourTelephone = result.teamMateFourTelephone
+      console.log(reponse.data.registrationForm)
+    })
+}
+
+
+
 
 
 

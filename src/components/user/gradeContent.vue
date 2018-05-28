@@ -55,10 +55,10 @@
             <div class="col-md-2 tuo">
               <form action="" enctype="multipart/form-data" id="form2">
                   <div class="caption-pic">
-                   <img src="" class="caption-img">
-                   <input type="file" name="caption-photo" class="caption-input" ref="inputer" data-uploadtype="photo"/>
+                  <!-- <img v-bind:src="allData.photoUrl" class="caption-img">-->
+
                  </div>
-                 <p>请上传队长照片</p>
+                 <p>队长照片</p>
               </form>
             </div>
         </div>
@@ -85,76 +85,76 @@
                         <th class="col-sm-4">所在学院及专业班级</th>
                         <th class="col-sm-4">手机号码</th>
                     </tr>
-                    <tr>
-                        <td>
-                          <input type="text" class="form-control"  style="display:inline-block" name="Teammates1" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" name="Teammates1_ZhuanYe" class="form-control" required  style="display:inline-block;"  >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"  name="Teammates1_Telephone" style="display:inline-block;" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <input type="text" class="form-control" style="display:inline-block" name="Teammates2">
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" name="Teammates2_ZhuanYe" class="form-control"   style="display:inline-block;"  >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"  name="Teammates2_Telephone" style="display:inline-block;">
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <input type="text" class="form-control" style="display:inline-block" name="Teammates3">
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" name="Teammates3_ZhuanYe" class="form-control" required  style="display:inline-block;" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"  name="Teammates3_Telephone" style="display:inline-block;" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <input type="text" class="form-control"  style="display:inline-block" name="Teammates4" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" name="Teammates4_ZhuanYe" class="form-control" required  style="display:inline-block;"  >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"  name="Teammates4_Telephone" style="display:inline-block;">
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                          <input type="text" class="form-control"  style="display:inline-block" name="Teammates5" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" name="Teammates5_ZhuanYe" class="form-control" required  style="display:inline-block;"  >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                        <td>
-                          <input type="text" class="form-control"  name="Teammates5_Telephone" style="display:inline-block;" >
-                          <span style="display:inline-block;margin-left:6px;"></span>
-                        </td>
-                    </tr>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control" v-model="competitionForm.teamMateOneName" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates1" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" name="Teammates1_ZhuanYe" v-model="competitionForm.teamMateOneClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" required @keyup="TestReg($event)" v-model="competitionForm.teamMateOneTelephone" name="Teammates1_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" class="form-control" required @keyup="TestReg($event)" v-model="competitionForm.teamMateTwoName" style="display:inline-block" name="Teammates2" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" name="Teammates2_ZhuanYe"  v-model="competitionForm.teamMateTwoClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" required @keyup="TestReg($event)" v-model="competitionForm.teamMateTwoTelephone" name="Teammates2_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text"  v-model="competitionForm.teamMateThreeName"class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates3" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" name="Teammates3_ZhuanYe" v-model="competitionForm.teamMateThreeClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" class="form-control" v-model="competitionForm.teamMateThreeTelephone" required @keyup="TestReg($event)" name="Teammates3_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="text" v-model="competitionForm.teamMateFourName" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates4" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" name="Teammates4_ZhuanYe"v-model="competitionForm.teamMateFourClass" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                    <td>
+                      <input type="text" v-model="competitionForm.teamMateFourTelephone" class="form-control" required @keyup="TestReg($event)" name="Teammates4_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                      <span style="display:inline-block;margin-left:6px;"></span>
+                    </td>
+                  </tr>
+                  <!--   <tr>
+                         <td>
+                           <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates5" autocomplete="off" placeholder="（选填）">
+                           <span style="display:inline-block;margin-left:6px;"></span>
+                         </td>
+                         <td>
+                           <input type="text" name="Teammates5_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
+                           <span style="display:inline-block;margin-left:6px;"></span>
+                         </td>
+                         <td>
+                           <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates5_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
+                           <span style="display:inline-block;margin-left:6px;"></span>
+                         </td>
+                     </tr>-->
                 </table>
             </form>
         </div>
@@ -264,23 +264,38 @@ export default {
       formdataPic:{},
       formdataWenjian1:{},
       formdataWenjian2:{},
-      Alldata:{},
+      allData:{
+        photoUrl:'https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=12c4d521a80f4bfb93d09854334e788f/10dfa9ec8a136327f216788d9d8fa0ec09fac791.jpg'
+
+      },
       competitionForm:{
-        captionName : this.$route.params.data.captionName,
-        zhuanYe : this.$route.params.data.zhuanYe,
-        xueHao : this.$route.params.data.xueHao,
-        telephone : this.$route.params.data.telephone,
-        weChat : this.$route.params.data.weChat,
-        school : this.$route.params.data.school,
-        duiWuName : this.$route.params.data.duiWuName,
-        zuoPinName : this.$route.params.data.zuoPinName,
-        aboutTest : this.$route.params.data.aboutTest,
-        aboutFunction : this.$route.params.data.aboutFunction,
-        aboutNews : this.$route.params.data.aboutNews,
-        technologyWay : this.$route.params.data.technologyWay,
-        technologyCase : this.$route.params.data.technologyCase,
-        productIntroduce : this.$route.params.data.productIntroduce,
-        adress : this.$route.params.data.adress,
+        captionName : '',
+        zhuanYe : '',
+        xueHao : '',
+        telephone : '',
+        weChat : '',
+        school : '',
+        duiWuName : '',
+        zuoPinName : '',
+        aboutTest : '',
+        aboutFunction : '',
+        aboutNews : '',
+        technologyWay : '',
+        technologyCase : '',
+        productIntroduce : '',
+        adress : '',
+        teamMateOneName:'',
+        teamMateOneClass:'',
+        teamMateOneTelephone:'',
+        teamMateTwoName:'',
+        teamMateTwoClass:'',
+        teamMateTwoTelephone:'',
+        teamMateThreeName:'',
+        teamMateThreeClass:'',
+        teamMateThreeTelephone:'',
+        teamMateFourName:'',
+        teamMateFourClass:'',
+        teamMateFourTelephone:'',
       },
       grade:{
         captionName:this.$route.params.data.captionName,
@@ -301,7 +316,7 @@ export default {
       submitTeamGrade(this,this.grade)
     },
     getData(){
-      getRegistrationById(this)
+      getRegistrationById(this,this.competitionForm)
     }
 
 

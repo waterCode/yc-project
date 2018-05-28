@@ -11,8 +11,11 @@ export default {
   postCompetitionData(data){
     return Axios.post(API.competition, data)
   },
-  getRegistrationById(id){
-    return Axios.post(API.competition, id)
+  getRegistrationById(id,token){
+    Axios.defaults.headers.common['authorization'] = token
+    return Axios.get(API.registrationById, {
+      params:{id:id}
+    })
   },
   postAllCompetitionData(dataForm){
     let config = {

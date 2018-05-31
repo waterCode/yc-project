@@ -111,10 +111,19 @@ export const postJoinUsData = (that, data) =>{
 
 export const submitTeamGrade = (that,data) =>{
   network.submitTeamGrade(sessionStorage.getItem('accessToken'),data)
+    .then(res =>{
+      if(res.data.result){
+        //弹窗成功并跳转
+        showMsg(that, true, res.data.message, 'success')
+
+      }else {
+        showMsg(that, true, res.data.message, 'error')
+      }
+    })
 };
 
 
-export const getRegistrationById = (that,data) =>{
+export const getRegistrationById = (that,data,urlList) =>{
   //拿到id进行查询
   network.getRegistrationById(sessionStorage.getItem('participantId'),sessionStorage.getItem('accessToken'))
     .then(reponse =>{
@@ -147,6 +156,9 @@ export const getRegistrationById = (that,data) =>{
       data.teamMateFourName = result.teamMateFourName
       data.teamMateFourClass = result.teamMateFourClass
       data.teamMateFourTelephone = result.teamMateFourTelephone
+      urlList.photoUrl = reponse.data.imgUrl
+      urlList.file1Url = reponse.data.file1Url
+      urlList.file2Url = reponse.data.file2Url
       console.log(reponse.data.registrationForm)
     })
 }

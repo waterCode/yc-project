@@ -141,20 +141,7 @@
                       <span style="display:inline-block;margin-left:6px;"></span>
                     </td>
                   </tr>
-                  <!--   <tr>
-                         <td>
-                           <input type="text" class="form-control" required @keyup="TestReg($event)" style="display:inline-block" name="Teammates5" autocomplete="off" placeholder="（选填）">
-                           <span style="display:inline-block;margin-left:6px;"></span>
-                         </td>
-                         <td>
-                           <input type="text" name="Teammates5_ZhuanYe" class="form-control" required  style="display:inline-block;" @keyup="TestReg($event)" autocomplete="off" placeholder="（选填）">
-                           <span style="display:inline-block;margin-left:6px;"></span>
-                         </td>
-                         <td>
-                           <input type="text" class="form-control" required @keyup="TestReg($event)" name="Teammates5_Telephone" style="display:inline-block;" autocomplete="off" placeholder="（选填）">
-                           <span style="display:inline-block;margin-left:6px;"></span>
-                         </td>
-                     </tr>-->
+
                 </table>
             </form>
         </div>
@@ -197,17 +184,14 @@
                 </div>
             </form>
         </div>
-      <!--  <div class="container competition-wenxin">
+        <div class="container competition-wenxin">
             <h4 class="competition-titles">附件</h4>
             <div class="row" style="margin:20px;">
-              <form action="" enctype="multipart/form-data" name="documentForm1">
-                <input type="file" name="" value="上传竞赛方案" style="display:inline-block;" class="col-xs-5" >
-              </form>
-              <form enctype="multipart/form-data" name="documentForm2">
-                <input type="file" name="" value="上传附件" style="display:inline-block;margin-left:30px;" class="col-xs-5" >
-              </form>
+              <a href="https://vuejs.org/images/logo.png" download class="col-xs-5">附件1</a>
+              <a href="https://vuejs.org/images/logo.png" download class="col-xs-5">附件2</a>
+
             </div>
-        </div>-->
+        </div>
         <div class="block">
         <h4 class="competition-titles">评分</h4>
         <span class="demonstration">创新分</span>
@@ -265,8 +249,9 @@ export default {
       formdataWenjian1:{},
       formdataWenjian2:{},
       allData:{
-        photoUrl:'https://ss0.baidu.com/94o3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=12c4d521a80f4bfb93d09854334e788f/10dfa9ec8a136327f216788d9d8fa0ec09fac791.jpg'
-
+        photoUrl:'',
+        file1Url:'',
+        file2Url:''
       },
       competitionForm:{
         captionName : '',
@@ -316,7 +301,7 @@ export default {
       submitTeamGrade(this,this.grade)
     },
     getData(){
-      getRegistrationById(this,this.competitionForm)
+      getRegistrationById(this,this.competitionForm,this.allData)
     }
 
 

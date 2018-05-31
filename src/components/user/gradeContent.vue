@@ -55,7 +55,7 @@
             <div class="col-md-2 tuo">
               <form action="" enctype="multipart/form-data" id="form2">
                   <div class="caption-pic">
-                  <!-- <img v-bind:src="allData.photoUrl" class="caption-img">-->
+                    <img  v-bind:src="allData.photoUrl" class="caption-img caption-pic">
 
                  </div>
                  <p>队长照片</p>

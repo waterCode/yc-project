@@ -187,8 +187,8 @@
         <div class="container competition-wenxin">
             <h4 class="competition-titles">附件</h4>
             <div class="row" style="margin:20px;">
-              <a href="https://vuejs.org/images/logo.png" download class="col-xs-5">附件1</a>
-              <a href="https://vuejs.org/images/logo.png" download class="col-xs-5">附件2</a>
+              <a v-bind:href="allData.file1Url" download class="col-xs-5">附件1</a>
+              <a v-bind:href="allData.file2Url" download class="col-xs-5">附件2</a>
 
             </div>
         </div>

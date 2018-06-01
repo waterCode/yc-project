@@ -9,6 +9,7 @@ import gradePage from '@/components/user/gradePage'
 import memberListPage from '@/components/admin/memberList'
 import participantList from '@/components/admin/participantList'
 import userCenterPage from '@/components/admin/userCenterPage'
+import sentEmail from '@/components/admin/sentEmail'
 
 
 Vue.use(Router)
@@ -57,6 +58,11 @@ export default new Router({
       component:participantList
     },
     {
+      path:'/sentEmail',
+      name:'sentEmail',
+      component:sentEmail
+    },
+    {
       path:'/userCenterPage',
       name:'userCenterPage',
       component:userCenterPage,
@@ -68,7 +74,11 @@ export default new Router({
           {
           path:'b',
           component:memberListPage
-          }
+          },
+        {
+          path:'c',
+          component:sentEmail
+        }
           ]
     }
 

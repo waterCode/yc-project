@@ -39,8 +39,8 @@
           this.$router.push('/userCenterPage/a');
         }else if(key ==2){
           this.$router.push('/userCenterPage/b');
-        }else {
-
+        }else if (key ==3){
+          this.$router.push('/userCenterPage/c');
         }
       }
     }

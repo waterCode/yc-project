@@ -63,6 +63,20 @@ export const getAllParticipantsMembers=(that,data) =>{
       })
   }
 
+/*要求是管理者的token才能返回数据*/
+export const getAllJoinUsMembers=(that,data) =>{
+  //拿到token
+  network.getAllJoinUsMembers(sessionStorage.getItem('accessToken'))
+    .then(res =>{
+
+      res.data.forEach((e)=>{
+        data.push(e)
+      })
+      console.log("allMember")
+      console.log(res.data)
+    })
+}
+
   export const getAllMembers=(that,data) =>{
     //拿到token
     network.getAllMembers(sessionStorage.getItem('accessToken'))
@@ -71,6 +85,10 @@ export const getAllParticipantsMembers=(that,data) =>{
           data.push(e)
         })
       })
+  }
+
+  export const updateIdentity=(that,data)=>{
+    network.updateIdentity(sessionStorage.getItem('accessToken'),data)
   }
 
 export const postCompetitionRegistrationForm = (that, data) =>{

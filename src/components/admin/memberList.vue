@@ -13,7 +13,7 @@
     <el-table-column
       label="管理员级别">
       <template slot-scope="scope">
-        <el-select v-model="scope.row.roles" placeholder="请选择">
+        <el-select v-model="scope.row.roles" placeholder="请选择" @change="selectedChange(scope.$index)">
           <el-option
             v-for="item in options"
             :key="item.value"
@@ -27,7 +27,7 @@
   </el-table>
 </template>
 <script>
-  import { getAllMembers } from '../../lib/vueHelper'
+  import { getAllMembers,updateIdentity } from '../../lib/vueHelper'
     export default {
         name: "member-list",
         created(){
@@ -37,6 +37,9 @@
 
           getMemberList(){
             getAllMembers(this,this.membersData)
+          },
+          selectedChange(index){
+            updateIdentity(this,this.membersData[index])
           }
         },
         data(){
@@ -45,13 +48,13 @@
             ],
 
             options:[{
-              value:'选项1',
+              value:'member',
               label:'member'
             },{
-              value:'选项2',
+              value:'admin',
               label:'admin'
             },{
-              value:'选项3',
+              value:'superAdmin',
               label:'superAdmin'
             },
             ],

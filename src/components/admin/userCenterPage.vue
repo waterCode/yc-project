@@ -10,8 +10,9 @@
       active-text-color="#ffd04b"
       >
       <el-menu-item index="1" >竞赛报名管理</el-menu-item>
-      <el-menu-item index="2">用户权限管理</el-menu-item>
-      <el-menu-item index="3">邮件群发</el-menu-item>
+      <el-menu-item index="2">新成员报名管理</el-menu-item>
+      <el-menu-item index="3">用户权限管理</el-menu-item>
+      <el-menu-item index="4">邮件群发</el-menu-item>
 
     </el-menu>
   <div>
@@ -41,6 +42,8 @@
           this.$router.push('/userCenterPage/b');
         }else if (key ==3){
           this.$router.push('/userCenterPage/c');
+        }else if (key == 4){
+          this.$router.push('/userCenterPage/d');
         }
       }
     }

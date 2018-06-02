@@ -30,6 +30,10 @@ export default {
     Axios.defaults.headers.common['authorization'] = data
     return Axios.get(API.participantInfo)
   },
+  getAllJoinUsMembers(token){
+    Axios.defaults.headers.common['authorization'] = token
+    return Axios.get(API.joinUsMembersInfo)
+  },
   getAllMembers(token){
     Axios.defaults.headers.common['authorization'] = token
     return Axios.get(API.allMembers)
@@ -49,6 +53,11 @@ export default {
       url:API.registrationExcel,
       responseType:'blob'
     })
+  },
+
+  updateIdentity(token,data){
+    Axios.defaults.headers.common['authorization'] = token
+    return Axios.post(API.updateIdentity,data)
   }
 
 }

@@ -7,6 +7,7 @@ import joinUsPage from '@/components/Login/joinUsPage'
 import joinCompetition from '@/components/user/joinCompetition'
 import gradePage from '@/components/user/gradePage'
 import memberListPage from '@/components/admin/memberList'
+import joinUsList from '@/components/admin/joinUsList'
 import participantList from '@/components/admin/participantList'
 import userCenterPage from '@/components/admin/userCenterPage'
 import sentEmail from '@/components/admin/sentEmail'
@@ -51,6 +52,10 @@ export default new Router({
       path:'/memberListPage',
       name:'memberListPage',
       component:memberListPage
+    }, {
+      path:'/joinUsList',
+      name:'joinUsList',
+      component:joinUsList
     },
     {
       path:'/participantList',
@@ -73,10 +78,14 @@ export default new Router({
           },
           {
           path:'b',
-          component:memberListPage
+          component:joinUsList
           },
         {
           path:'c',
+          component:memberListPage
+        },
+        {
+          path:'d',
           component:sentEmail
         }
           ]

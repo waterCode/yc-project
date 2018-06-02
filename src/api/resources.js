@@ -10,7 +10,9 @@ export default {
   joinUs: `${API_ROOT}team/joinUs`,
   participantInfo: `${API_ROOT}secure/participants`,
   allMembers: `${API_ROOT}secure/users`,
+  joinUsMembersInfo: `${API_ROOT}secure/joinUsMembers`,
   submitGrade: `${API_ROOT}secure/submitGrade`,
+  updateIdentity: `${API_ROOT}secure/updateIdentity`,
   registrationExcel: `${API_ROOT}secure/getExcel`,
   registrationById: `${API_ROOT}secure/getRegistrationForm`
 }

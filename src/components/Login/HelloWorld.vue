@@ -16,25 +16,12 @@
             <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
           </div>
           <div class="collapse navbar-collapse pull-right" id="example-navbar-collapse">
-            <ul class="nav navbar-nav thenavbar">
+            <ul class="nav navbar-nav">
               <li class="active"><router-link to="/">主页</router-link></li>
-              <li><router-link to="/joinUsPage">加入我们</router-link></li>
-              <li><router-link to="/joinCompetition">竞赛报名</router-link></li>
-              <li :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}">登录</router-link></li>
-              <li><router-link to="/register">注册</router-link></li>
-              <!---->
-              <li class="loginName" v-if="isUserCenterShow">
-                <el-dropdown @command="handleCommand">
-                <span class="el-dropdown-link ">
-                    {{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
-                </span>
-                  <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item command="a">个人中心</el-dropdown-item>
-                    <el-dropdown-item command="b">退出登陆</el-dropdown-item>
-                  </el-dropdown-menu>
-                </el-dropdown>
-              </li>
-              <!---->
+              <li><router-link to="/joinus">加入我们</router-link></li>
+              <li><a href="#">竞赛报名</a></li>
+              <li><a href="#">登录</a></li>
+              <li><a href="#">注册</a></li>
             </ul>
           </div>
         </div>
@@ -56,7 +43,7 @@
           <div class="row about-us-title-2"><span>一</span>关于我们<span>一</span></div>
           <div class="row about-us-things-1">
             <div class="col-sm-6 col-xs-12">
-              <img src="./../../static/images/aboutus1.png" class="ganwei-pic">
+              <img src="./../../../static/images/aboutus1.png" class="ganwei-pic">
             </div>
             <div class="col-sm-6 col-xs-12 ganwei-cintainer-allbox">
               <div class="row ganwei-container">
@@ -73,7 +60,7 @@
           </div>
           <div class="row about-us-things-1">
             <div class="col-sm-6 col-xs-12">
-              <img src="./../../static/images/aboutus2.png" class="ganwei-pic">
+              <img src="./../../../static/images/aboutus2.png" class="ganwei-pic">
             </div>
             <div class="col-sm-6 col-xs-12 ganwei-cintainer-allbox">
               <div class="row ganwei-container">
@@ -97,12 +84,12 @@
         <div class="photo-box-title-2"><span>一</span>照片墙<span>一</span></div>
         <div class="photo-fourbox container">
           <div class="row twobox">
-            <div><img src="./../../static/images/协同.jpg"></div>
-            <div><img src="./../../static/images/创新.jpg"></div>
+            <div><img src="./../../../static/images/协同.jpg"></div>
+            <div><img src="./../../../static/images/创新.jpg"></div>
           </div>
           <div class="row twobox">
-            <div><img src="./../../static/images/交流.jpg"></div>
-            <div><img src="./../../static/images/合作.jpg"></div>
+            <div><img src="./../../../static/images/交流.jpg"></div>
+            <div><img src="./../../../static/images/合作.jpg"></div>
           </div>
         </div>
       </div>
@@ -112,7 +99,7 @@
         <div class="professor-title">Our Professional tutor</div>
         <div class="professor-box">
           <div class="professor-authorPic">
-            <img src="./../../static/images/苏成悦头像.jpg" alt="">
+            <img src="./../../../static/images/苏成悦头像.jpg" alt="">
           </div>
           <div class="professor-detail ">
             <div class="professor-name">苏成悦</div>
@@ -124,7 +111,7 @@
         </div>
         <div class="professor-box">
           <div class="professor-authorPic">
-            <img src="./../../static/images/陈元电头像.jpg" alt="">
+            <img src="./../../../static/images/陈元电头像.jpg" alt="">
           </div>
           <div class="professor-detail ">
             <div class="professor-name">陈元电</div>
@@ -159,21 +146,21 @@
             <div class="row team-row">
               <div class="team-row-row">
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/无人机.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/无人机.jpg"></div>
                   <div class="content-pic-desc">无人机组</div>
                 </div>
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/机器人.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/机器人.jpg"></div>
                   <div class="content-pic-desc">机器人组</div>
                 </div>
               </div>
               <div class="team-row-row">
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/嵌入式.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/嵌入式.jpg"></div>
                   <div class="content-pic-desc">嵌入式组</div>
                 </div>
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/专利.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/专利.jpg"></div>
                   <div class="content-pic-desc">专利组</div>
                 </div>
               </div>
@@ -181,21 +168,21 @@
             <div class="row team-row">
               <div class="team-row-row">
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/图像处理.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/图像处理.jpg"></div>
                   <div class="content-pic-desc">图像处理组</div>
                 </div>
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/app.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/app.jpg"></div>
                   <div class="content-pic-desc">APP设计组</div>
                 </div>
               </div>
               <div class="team-row-row">
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/硬件.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/硬件.jpg"></div>
                   <div class="content-pic-desc">硬件组</div>
                 </div>
                 <div class="team-content">
-                  <div class="content-pic"><img src="./../../static/images/结构设计.jpg"></div>
+                  <div class="content-pic"><img src="./../../../static/images/结构设计.jpg"></div>
                   <div class="content-pic-desc">网页组</div>
                 </div>
               </div>
@@ -224,12 +211,6 @@ export default {
   components:{
       FooterYc
   },
-  computed:{
-
-  },
-  created(){
-    this.checkLogin()
-  },
   data() {
     return {
         playerOptions : {
@@ -254,36 +235,7 @@ export default {
               remainingTimeDisplay: false,
               fullscreenToggle: true  //全屏按钮
             }
-        },
-        loginName:'登陆',
-        currentUserName:'',
-        isUserCenterShow:false,
-        isLoginButtonShow:true
-    }
-  },
-  methods:{
-    checkLogin(){
-     let name = sessionStorage.getItem("currentUserName")
-      if(name == null){
-       this.loginName = '登陆'
-        this.isLoginButtonShow = true
-        this.isUserCenterShow = false
-      }else {
-       this.currentUserName = name
-        this.isLoginButtonShow = false
-        this.isUserCenterShow = true
-      }
-    },
-    handleCommand(command){
-      if(command == 'a'){
-        this.$router.push('/userCenterPage');
-      }else {
-        sessionStorage.removeItem("accessToken")
-        sessionStorage.removeItem("currentUserName")
-        this.isLoginButtonShow = true
-        this.isUserCenterShow = false
-        location.reload()
-      }
+        }
     }
   }
 }
@@ -291,16 +243,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.thenavbar{
-  display: flex;
-  align-items: center;
-}
-@media screen and (max-width: 767px) {
-  .thenavbar{
-    display: flex;
-    flex-direction: column;
-  }
-}
 .video-js .vjs-big-play-button{}
 .page-container {
   position: absolute;
@@ -310,11 +252,8 @@ export default {
   height: 100%;
 }
 .all-container{
-  width: 100%;
-  height: auto;
   padding: 0;
   margin: 0;
-  overflow-x: hidden;
 }
 .index-container{
   margin-bottom: 0;
@@ -738,8 +677,20 @@ export default {
     font-size: 16px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
 .team-title{
   position: relative;
+  /*border: 1px solid black;*/
   margin-bottom: 30px;
   font-size: 30px;
   letter-spacing: 3px;
@@ -760,10 +711,12 @@ export default {
   width: 100%;
   height: auto;
   padding: 50px 0;
+  /*border: 1px solid black;*/
 }
 .team-authors{
   width: 100%;
   height: auto;
+  /*border: 1px solid black;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -771,6 +724,7 @@ export default {
 .team-row{
   display: flex;
   flex-direction: row;
+  /*border: 1px solid black;*/
 }
 .team-row-row{
   display: flex;
@@ -778,12 +732,14 @@ export default {
 }
 .team-content{
   width: 120px;
+  /*border: 1px solid yellow;*/
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 20px;
 }
 .content-pic{
+  /*border: 1px solid red;*/
   width: 75px;
   height: 75px;
   margin-bottom: 20px;

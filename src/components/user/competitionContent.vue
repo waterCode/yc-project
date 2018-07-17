@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="container compo-content">
+  <div class="compotetion-allbox">
+    <div class="container">
         <div class="container caption-desc">
             <h4 class="competition-titles">队长详细信息</h4>
             <form role="form" class="myform col-md-10" id="form1">
@@ -212,12 +212,12 @@
             </div>
         </div>
         <div class="container competition-chengnuo">
-            <h2 class="competition-titles">作者承诺</h2>
-            <h4>1、本人保证报名信息属实，不存在虚假或隐瞒。</h4>
-            <h4>2、本人保证参赛作品属于自己原创，不存在侵犯任何第三人合法权益。</h4>
-            <h4>3、本人声明，若因参赛作品发生侵犯第三者的合法权益，均由本人负责处理并承担相关的法律责任。与主办方无关。</h4>
-            <h4>4、本人同意主办方、赞助方有权无偿使用参赛作品进行非盈利性活动，包括但不限于：公开发布、展示。</h4>
-            <h4 class="chengnuo-last">5、一旦主办方发现本人存在虚报个人信息或者参赛作品非原创，本人愿意接受主办方取消本人参赛及获奖资格。</h4>
+            <h4 class="competition-titles">作者承诺</h4>
+            <h5>1、本人保证报名信息属实，不存在虚假或隐瞒。</h5>
+            <h5>2、本人保证参赛作品属于自己原创，不存在侵犯任何第三人合法权益。</h5>
+            <h5>3、本人声明，若因参赛作品发生侵犯第三者的合法权益，均由本人负责处理并承担相关的法律责任。与主办方无关。</h5>
+            <h5>4、本人同意主办方、赞助方有权无偿使用参赛作品进行非盈利性活动，包括但不限于：公开发布、展示。</h5>
+            <h5 class="chengnuo-last">5、一旦主办方发现本人存在虚报个人信息或者参赛作品非原创，本人愿意接受主办方取消本人参赛及获奖资格。</h5>
             <form class="signup-time" id="form11">
                   <span class="Table-date pull-left col-xs-12 col-sm-6" style="display:inline-block;margin-bottom:5px;">填表日期：
                       <input name="year" type="text" required @keyup="$event.currentTarget.value=$event.currentTarget.value.replace(/[^\d]/g,'')" @focusout="testYear($event)">年
@@ -606,8 +606,23 @@ export default {
 </script>
 
 <style>
-.compo-content{
-  padding: 50px 0;
+@media screen and (max-width: 700px) {
+  .competition-chengnuo h5{
+    padding: 4px 0;
+    letter-spacing: 1px;
+  }
+  .competition-wenxin p{
+    padding: 3px 0;
+  }
+  .duiyuan-desc-table tr th{
+    font-size: 13px;
+  }
+}
+.compotetion-allbox{
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px;
+  padding-top: 20px;
 }
 .competition-wenxin p:last-child{
   margin-bottom: 20px;
@@ -638,6 +653,12 @@ export default {
 }
 .allSubmit{
   margin-top: 35px;
+  background-color: #41B883;
+  border-color: #41B883;
 }
-
+.allSubmit:hover{
+  background-color: #41B883;
+  border-color: #41B883;
+  opacity: .7;
+}
 </style>

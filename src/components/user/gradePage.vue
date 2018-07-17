@@ -1,6 +1,28 @@
 <template>
   <div>
-    <competitionHeader></competitionHeader>
+    <div class="index-container">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                data-target="#example-navbar-collapse">
+              <span class="sr-only">切换导航</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
+          </div>
+          <div class="collapse navbar-collapse pull-right" id="example-navbar-collapse">
+            <ul class="nav navbar-nav thenavbar">
+              <li><router-link to="/">主页</router-link></li>
+              <li><router-link to="/joinUsPage">加入我们</router-link></li>
+              <li class="active"><router-link to="/userCenterPage/a">竞赛报名管理</router-link></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
       <gradeContent></gradeContent>
       <competitionFooter></competitionFooter>
   </div>
@@ -21,7 +43,20 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.index-container{
+  margin-bottom: 30px;
+}
+
+.navbar-inverse{
+    margin-bottom: 0;
+}
+.navbar{
+  border-radius: 0;
+}
+.navbar-brand{
+  color: #fff;
+}
 h1,h2,h3,h4,h5,label,td,th{
   padding: 0;
   margin: 0;

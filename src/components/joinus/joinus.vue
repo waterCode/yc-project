@@ -1,38 +1,48 @@
 <template>
   <div class="all-container">
-    <!--导航-->
     <div class="index-container">
-      <nav class="navbar navbar-inverse" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                data-target="#example-navbar-collapse">
-              <span class="sr-only">切换导航</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="container ceng">
+            <div class="navbar-header ceng-1">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
+            </div>
+            <div class="ceng-2 collapse navbar-collapse pull-right" id="example-navbar-collapse">
+              <ul class="nav navbar-nav thenavbar">
+                <li><router-link to="/">主页</router-link></li>
+                <li class="join-us-li active"><router-link to="/joinUsPage">加入我们</router-link></li>
+                <li><router-link to="/joinCompetition">竞赛报名</router-link></li>
+                <li class="sign-in-li" :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}">登录</router-link></li>
+                <li class="zhuce-li"><a href="#">注册</a></li>
+                <!---->
+                <li class="loginName" v-if="isUserCenterShow">
+                  <el-dropdown @command="handleCommand">
+                  <span class="el-dropdown-link ">
+                      {{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
+                  </span>
+                    <el-dropdown-menu slot="dropdown">
+                      <el-dropdown-item command="a">个人中心</el-dropdown-item>
+                      <el-dropdown-item command="b">退出登陆</el-dropdown-item>
+                    </el-dropdown-menu>
+                  </el-dropdown>
+                </li>
+                <!---->
+              </ul>
+            </div>
           </div>
-          <div class="collapse navbar-collapse pull-right" id="example-navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li><router-link to="/">主页</router-link></li>
-              <li class="active"><router-link to="/joinus">加入我们</router-link></li>
-              <li><router-link to="/joinCompetition">竞赛报名</router-link></li>
-              <li><a href="#">登录</a></li>
-              <li><a href="#">注册</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+        </nav>
+      </div>
     <div class="joinus-content">
-
       <div class="joinus-desc">
         <p>Fill In The Registration Form</p>
         <p>只要是你对学习技术有一定的热情，同时又符合我们的要求，请填写上面的报名表，快快加入我们吧</p>
       </div>
-
       <div class="joinus-box">
       <div class="joinus-contentbox">
       <div class="joinus-header">
@@ -66,9 +76,6 @@
       </form>
       </div>
       </div>
-
-
-
     </div>
     <footer>
       <FooterYc class="thefooter"></FooterYc>
@@ -84,11 +91,41 @@ export default {
   components:{
       FooterYc
   },
+  created(){
+    this.checkLogin()
+  },
   computed:{
 
   },
   data() {
     return {
+        playerOptions : {
+            playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
+            autoplay: true, //如果true,浏览器准备好时开始回放。
+            muted: false, // 默认情况下将会消除任何音频。
+            loop: true, // 导致视频一结束就重新开始。
+            preload: 'auto', // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
+            language: 'zh-CN',
+            aspectRatio: '16:9', // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
+            fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
+            sources: [{
+              type: "",
+              src: "./../../static/video/2.mp4" //url地址
+            }],
+            poster: "./../../static/images/pic-1.jpg", //你的封面地址
+            // width: document.documentElement.clientWidth,
+            notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+            controlBar: {
+              timeDivider: true,
+              durationDisplay: true,
+              remainingTimeDisplay: false,
+              fullscreenToggle: true  //全屏按钮
+            }
+        },
+        loginName:'登陆',
+        currentUserName:'',
+        isUserCenterShow:false,
+        isLoginButtonShow:true
     }
   },
   methods:{
@@ -121,6 +158,28 @@ export default {
       var reg = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
       if(!reg.test(this.joinUsForm.telephone)){
         this.joinUsForm.telephone = '';
+      }
+    },
+    checkLogin(){
+     let name = sessionStorage.getItem("currentUserName")
+      if(name == null){
+       this.loginName = '登陆'
+        this.isLoginButtonShow = true
+        this.isUserCenterShow = false
+      }else {
+       this.currentUserName = name
+        this.isLoginButtonShow = false
+        this.isUserCenterShow = true
+      }
+    },
+    handleCommand(command){
+      if(command == 'a'){
+        this.$router.push('/userCenterPage');
+      }else {
+        sessionStorage.removeItem("accessToken")
+        sessionStorage.removeItem("currentUserName")
+        this.isLoginButtonShow = true
+        this.isUserCenterShow = false
       }
     }
   },

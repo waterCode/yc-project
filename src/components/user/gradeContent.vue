@@ -313,7 +313,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .competition-wenxin p:last-child{
   margin-bottom: 20px;
 }

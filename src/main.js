@@ -8,8 +8,12 @@ import 'element-ui/lib/theme-chalk/index.css'
 import AOS from 'aos'
 import "aos/dist/aos.css"
 import $ from 'jquery'
-/*import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap/dist/js/bootstrap.min'*/
+
+
+import VideoPlayer from 'vue-video-player'
+require('video.js/dist/video-js.css')
+require('vue-video-player/src/custom-theme.css')
+Vue.use(VideoPlayer)
 
 Vue.config.productionTip = false
 

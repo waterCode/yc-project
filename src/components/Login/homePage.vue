@@ -212,7 +212,6 @@
   export default {
     name: "home-page",
     created(){
-      console.log("created")
       this.checkLogin()
     },
     data(){
@@ -237,7 +236,7 @@
           this.isUserCenterShow = true
         }
       },
-     handleCommand(command){
+      handleCommand(command){
         if(command == 'a'){
           this.$router.push('/userCenterPage');
         }else {
@@ -246,7 +245,7 @@
           this.isLoginButtonShow = true
           this.isUserCenterShow = false
         }
-    }
+      }
     },
 
 

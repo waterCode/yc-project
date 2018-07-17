@@ -1,25 +1,93 @@
 <template>
   <div>
-    <competitionHeader></competitionHeader>
+      <div class="index-container">
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse"
+                  data-target="#example-navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
+            </div>
+            <div class="collapse navbar-collapse pull-right" id="example-navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li><router-link to="/">主页</router-link></li>
+                <li><router-link to="/joinus">加入我们</router-link></li>
+                <li class="active"><router-link to="/joinCompetition">竞赛报名</router-link></li>
+                <li><a href="#">登录</a></li>
+                <li><a href="#">注册</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
       <competitionContent></competitionContent>
-      <competitionFooter></competitionFooter>
+      <footer-yc></footer-yc>
   </div>
 </template>
 
 <script>
+import FooterYc from './../footer/footer.vue'
 import competitionContent from './competitionContent.vue'
-import competitionHeader from './competitionHeader.vue'
-import competitionFooter from './competitionFooter.vue'
 export default {
   components: {
     competitionContent,
-    competitionHeader,
-    competitionFooter
+    FooterYc
   }
 }
 </script>
 
 <style>
+.thenavbar{
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .thenavbar{
+    display: flex;
+    flex-direction: column;
+  }
+}
+.video-js .vjs-big-play-button{}
+.page-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.all-container{
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+.index-container{
+  margin-bottom: 0;
+}
+.navbar-brand{
+  color: #fff !important;
+}
+.navbar{
+  margin-bottom: 0;
+}
+.navbar-nav li{
+  padding: 0 15px;
+}
+.navbar-nav .active{
+  background-color: #080808;
+}
+@media (min-width: 768px){
+  .navbar{
+    border-radius: 0 !important;
+  }
+}
+
 h1,h2,h3,h4,h5,label,td,th{
   padding: 0;
   margin: 0;

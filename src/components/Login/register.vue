@@ -187,15 +187,18 @@ export default {
     align-items: center;
     width: 100%;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
+    margin-top: 10%;
 }
 
 .loginWrapper .hd {
   width: 300px;
+  margin-bottom: 20px;
 }
 
 .loginWrapper .hd h2 {
   font-weight: 400;
   color: #20A0FF;
+  margin-bottom: 10px;
 }
 
 .loginWrapper .hd p {

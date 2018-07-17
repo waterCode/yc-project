@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container compo-content">
         <div class="container caption-desc">
             <h4 class="competition-titles">队长详细信息</h4>
             <form role="form" class="myform col-md-10" id="form1">
@@ -606,6 +606,9 @@ export default {
 </script>
 
 <style>
+.compo-content{
+  padding: 50px 0;
+}
 .competition-wenxin p:last-child{
   margin-bottom: 20px;
 }

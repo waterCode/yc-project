@@ -52,14 +52,23 @@ export const doRegister = (that, data) => {
 export const getAllParticipantsMembers=(that,data) =>{
     //拿到token
     network.getAllParticipantsMembers(sessionStorage.getItem('accessToken'))
-      .then(res =>{
+      .then(
+      //   res =>{
 
-        res.data.forEach((e)=>{
-          data.push(e)
-        })
-        console.log("allMember")
-        console.log(res.data)
-      })
+      //   res.data.forEach((e)=>{
+      //     data.push(e)
+      //   })
+      //   console.log("allMember")
+      //   console.log(res.data)
+      // }
+        // res=>{
+         // var AllDatas = res.data.registrationFormList;
+         // for(var i=0;i>AllDatas.length;i++){
+         //  data.push(AllDatas[i])
+         // }
+         // console.log(AllDatas);
+        // }
+      )
   }
 
 /*要求是管理者的token才能返回数据*/

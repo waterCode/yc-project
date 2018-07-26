@@ -31,13 +31,14 @@
 </template>
 
 <script>
+  import axios from 'axios'
   import {getAllParticipantsMembers,getExcel} from '../../lib/vueHelper'
   import router from '../../router'
 
   export default {
     name: "participant-list",
     created() {
-      this.getParticipantsList()
+
     },
     methods: {
       findMemberDetail(index) {
@@ -48,11 +49,27 @@
         router.push({name: 'gradePage', params: {data: this.participantsData[index]}})
       },
       getParticipantsList() {
-        getAllParticipantsMembers(this, this.participantsData)
+        // getAllParticipantsMembers(this, this.participantsData)
+        var token = sessionStorage.getItem('accessToken');
+        axios({
+          url:"http://47.106.105.117:8083/secure/participants",
+          method:"get",
+          headers:{'authorization' : token},
+        }).then(res=>{
+          var AllDatas = res.data.registrationFormList;
+          // for(var i=0;i>AllDatas.length;i++){
+          //  this.participantsData.push(AllDatas[i])
+          // }
+          // console.log(AllDatas);
+          this.participantsData=AllDatas;
+        })
       },
       getRegistrationExcel(){
         getExcel(this)
       }
+    },
+    mounted(){
+      this.getParticipantsList()
     },
     data() {
       return {

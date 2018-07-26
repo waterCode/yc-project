@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="compotetion-allbox">
     <div class="container">
         <div class="container caption-desc">
             <h4 class="competition-titles">队长详细信息</h4>
@@ -12,7 +12,9 @@
                         </div>
                         <div class="col-sm-6 row-p">
                             <label for="" class="form-label">题目类型：</label>
-                            <select></select>
+                            <select>
+                              <option v-for="item in Options">{{item}}</option>
+                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -146,31 +148,31 @@
             </form>
         </div>
         <div class="container">
-            <h4 class="competition-titles">作品简介：（作品描述、限200字）</h4>
+            <h4 class="competition-titles">作品简介：</h4>
             <form role="form" class="other-desc" id="form5">
                 <div class="form-group">
                     <textarea class="form-control" v-model="competitionForm.productIntroduce" rows="3" maxlength="200" style="resize: none" name="productIntroduce" ></textarea>
                 </div>
             </form>
-            <h4 class="competition-titles">技术方案：（限200字）</h4>
+            <h4 class="competition-titles">技术方案：</h4>
             <form role="form" class="other-desc" id="form6">
                 <div class="form-group">
                     <textarea class="form-control" v-model="competitionForm.technologyCase" rows="3" maxlength="200" style="resize: none" name="technologyCase"></textarea>
                 </div>
             </form>
-            <h4 class="competition-titles">技术路线：（限200字）</h4>
+            <h4 class="competition-titles">技术路线：</h4>
             <form role="form" class="other-desc" id="form7">
                 <div class="form-group">
                     <textarea class="form-control" v-model="competitionForm.technologyWay" rows="3" maxlength="200" style="resize: none" name="technologyWay" ></textarea>
                 </div>
             </form>
-            <h4 class="competition-titles">创新点：（限100字）</h4>
+            <h4 class="competition-titles">创新点:</h4>
             <form role="form" class="other-desc" id="form8">
                 <div class="form-group">
                     <textarea class="form-control" v-model="competitionForm.aboutNews" rows="3" maxlength="200" style="resize: none" name="aboutNews" ></textarea>
                 </div>
             </form>
-            <h4 class="competition-titles">实现的功能和指标：（限200字）</h4>
+            <h4 class="competition-titles">实现的功能和指标：</h4>
             <form role="form" class="other-desc" id="form9">
                 <div class="form-group">
                     <textarea class="form-control" v-model="competitionForm.aboutFunction" rows="3" maxlength="200" style="resize: none" name="aboutFunction" ></textarea>
@@ -187,8 +189,8 @@
         <div class="container competition-wenxin">
             <h4 class="competition-titles">附件</h4>
             <div class="row" style="margin:20px;">
-              <a v-bind:href="allData.file1Url" download class="col-xs-5">附件1</a>
-              <a v-bind:href="allData.file2Url" download class="col-xs-5">附件2</a>
+              <a v-bind:href="allData.file1Url" download class="col-xs-6 fujian">附件1</a>
+              <a v-bind:href="allData.file2Url" download class="col-xs-6 fujian">附件2</a>
 
             </div>
         </div>
@@ -236,11 +238,11 @@ export default {
       checkInputs1:false,
       check2:false,
       check3:false,
-      Options:{
-        'option1':"比赛类型1",
-        'option2':"比赛类型2",
-        'option3':"比赛类型3"
-      },
+      Options:[
+        'option1',
+        'option2',
+        'option3'
+      ],
       myday:0,
       myyear:0,
       mymonth:0,
@@ -314,35 +316,44 @@ export default {
 </script>
 
 <style scoped>
-.competition-wenxin p:last-child{
+.caption-pic{
+  width: 118px;
+  height: 144px;
+}
+.myform > .row{
+  margin-bottom: 10px;
+}
+.myform > .row > .row-p > label{
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+}
+.myform > .row > .row-p > input{
+  display: inline-block;
+}
+.competition-titles{
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid black;
+}
+#form3{
   margin-bottom: 20px;
 }
-.competition-chengnuo h4{
-  margin: 5px 0;
-}
-.chengnuo-last{
-  margin-bottom: 20px;
-}
-.duiyuan-desc-table{
-  margin-top: 15px;
-  margin-bottom: 25px;
-}
-.duiyuan-desc-table td input{
-  width: 80% !important;;
-  margin: 0 auto;
-}
-.duiyuan-desc th{
-  text-align: center;
-  font-size: 18px;
-}
-.caption-pic input{
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  cursor: pointer;
-}
-.allSubmit{
-  margin-top: 35px;
-}
+.duiyuan-desc-table > tr:first-child {
 
+}
+.duiyuan-desc-table > tr:first-child > th{
+  text-align: center;
+}
+.fujian{
+  text-align: center;
+}
+#form2 p{
+  text-align: center;
+}
+.compotetion-allbox{
+  padding-bottom: 30px;
+}
 </style>
+

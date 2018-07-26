@@ -11,20 +11,22 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
+              <router-link to="/" class="navbar-brand"><img class="brand-image" src="./../../../static/images/logo.png" alt="">YC勇创</router-link>
             </div>
             <div class="ceng-2 collapse navbar-collapse pull-right" id="example-navbar-collapse">
               <ul class="nav navbar-nav thenavbar">
                 <li><router-link to="/">主页</router-link></li>
                 <li class="join-us-li active"><router-link to="/joinUsPage">加入我们</router-link></li>
                 <li><router-link to="/joinCompetition">竞赛报名</router-link></li>
-                <li class="sign-in-li" :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}">登录</router-link></li>
-                <li class="zhuce-li"><a href="#">注册</a></li>
+                <li class="sign-in-li" :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}">
+                <img class="login-image" src="./../../../static/images/login.png">登录
+                </router-link></li>
+                <li class="zhuce-li"><router-link to="/register"><span class="register-image glyphicon glyphicon-cloud"></span><span>注册</span></router-link></li>
                 <!---->
                 <li class="loginName" v-if="isUserCenterShow">
                   <el-dropdown @command="handleCommand">
                   <span class="el-dropdown-link ">
-                      {{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
+                      <img class="login-image" src="./../../../static/images/login.png">{{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
                     <el-dropdown-menu slot="dropdown">
                       <el-dropdown-item command="a">个人中心</el-dropdown-item>
@@ -58,7 +60,7 @@
         <input type="text" name="qq" placeholder="QQ" required="required" v-model="joinUsForm.qqNum" @blur="checkQQ">
         <input type="text" name="qqMail" placeholder="QQ邮箱" required="required" v-model="joinUsForm.qqEmail" @blur="checkQQMail">
         <input type="text" name="telephone" placeholder="手机号码" required="required" v-model="joinUsForm.telephone" @blur="checkphone">
-        <select>
+        <select v-model="joinUsForm.groupName">
           <option value="飞控组" selected="selected">飞控组</option>
           <option value="机器人组">机器人组</option>
           <option value="嵌入式组">嵌入式组</option>
@@ -130,7 +132,7 @@ export default {
   },
   methods:{
     joinUs(){
-      if(this.joinUsForm.joinerName&&this.joinUsForm.college&&this.joinUsForm.studentNum&&this.joinUsForm.className&&this.joinUsForm.qqNum&&this.joinUsForm.qqEmail&&this.joinUsForm.telephone&&this.joinUsForm.groupName&&this.joinUsForm.introduceDescription&&this.joinUsForm.skill&&this.joinUsForm.experience&&this.joinUsForm.award){
+      if(this.joinUsForm.joinerName&&this.joinUsForm.college&&this.joinUsForm.studentNum&&this.joinUsForm.className&&this.joinUsForm.qqNum&&this.joinUsForm.qqEmail&&this.joinUsForm.telephone&&this.joinUsForm.introduceDescription&&this.joinUsForm.skill&&this.joinUsForm.experience&&this.joinUsForm.award&&this.joinUsForm.groupName){
         postJoinUsData(this,this.joinUsForm);
       }else{
         alert("你还有信息没填写完成！");
@@ -149,13 +151,13 @@ export default {
       }
     },
     checkQQMail(){
-      var ref = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
+      var reg = /^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/;
       if(!reg.test(this.joinUsForm.qqEmail)){
         this.joinUsForm.qqEmail = '';
       }
     },
     checkphone(){
-      var reg = /^([0-9]{3,4}-)?[0-9]{7,8}$/;
+      var reg = /^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/;
       if(!reg.test(this.joinUsForm.telephone)){
         this.joinUsForm.telephone = '';
       }
@@ -207,6 +209,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@import './../../../static/css/joinus.css'
-
+@import './../../../static/css/joinus.css';
 </style>

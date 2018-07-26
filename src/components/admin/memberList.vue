@@ -28,15 +28,22 @@
 </template>
 <script>
   import { getAllMembers,updateIdentity } from '../../lib/vueHelper'
+  import axios from 'axios'
     export default {
         name: "member-list",
         created(){
           this.getMemberList()
         },
         methods: {
-
           getMemberList(){
-            getAllMembers(this,this.membersData)
+            var token = sessionStorage.getItem('accessToken');
+            axios({
+              url:"http://47.106.105.117:8083/secure/users",
+              method:"get",
+              headers:{'authorization' : token},
+            }).then(res=>{
+              this.membersData=res.data.users;
+            })
           },
           selectedChange(index){
             updateIdentity(this,this.membersData[index])

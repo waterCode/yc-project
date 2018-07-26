@@ -7,7 +7,9 @@
 
       <el-table-column
         prop="id"
-        label="id"/>
+        label="id"
+        id="table-box-box"
+      />
       <el-table-column
         prop="duiWuName"
         label="队伍名"/>
@@ -42,14 +44,18 @@
     },
     methods: {
       findMemberDetail(index) {
-        console.log(this.participantsData[index]);
+        // console.log(this.participantsData[index]);
         //将选中的id存session里面
         sessionStorage.setItem("participantId",this.participantsData[index].id);
-        console.log("id:"+this.participantsData[index].id);
+        // console.log("id:"+this.participantsData[index].id);
         router.push({name: 'gradePage', params: {data: this.participantsData[index]}})
       },
       getParticipantsList() {
-        // getAllParticipantsMembers(this, this.participantsData)
+        var hasReload = sessionStorage.getItem('hasSetRoad');
+        if(!hasReload){
+          location.reload();
+          sessionStorage.setItem('hasSetRoad',true);
+        }
         var token = sessionStorage.getItem('accessToken');
         axios({
           url:"http://47.106.105.117:8083/secure/participants",
@@ -57,10 +63,6 @@
           headers:{'authorization' : token},
         }).then(res=>{
           var AllDatas = res.data.registrationFormList;
-          // for(var i=0;i>AllDatas.length;i++){
-          //  this.participantsData.push(AllDatas[i])
-          // }
-          // console.log(AllDatas);
           this.participantsData=AllDatas;
         })
       },

@@ -31,7 +31,7 @@
 <script>
 import gradeContent from './gradeContent'
 import competitionHeader from './competitionHeader.vue'
-import competitionFooter from './competitionFooter.vue'
+import competitionFooter from './../footer/footer.vue'
 
 export default {
 

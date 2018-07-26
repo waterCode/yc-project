@@ -11,15 +11,15 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <router-link to="/" class="navbar-brand" href="#">YC勇创</router-link>
+            <router-link to="/" class="navbar-brand"><img class="brand-image" src="./../../../static/images/logo.png" alt="">YC勇创</router-link>
           </div>
           <div class="collapse navbar-collapse pull-right" id="example-navbar-collapse">
             <ul class="nav navbar-nav thenavbar">
               <li><router-link to="/">主页</router-link></li>
               <li><router-link to="/joinUsPage">加入我们</router-link></li>
               <li><router-link to="/joinCompetition">竞赛报名</router-link></li>
-              <li class="active" :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}">登录</router-link></li>
-              <li><router-link to="/register">注册</router-link></li>
+              <li class="active" :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}"><img class="login-image" src="./../../../static/images/login.png">登录</router-link></li>
+              <li class="zhuce-li"><router-link to="/register"><span class="register-image glyphicon glyphicon-cloud"></span><span>注册</span></router-link></li>
               <!---->
               <li class="loginName" v-if="isUserCenterShow">
                 <el-dropdown @command="handleCommand">
@@ -149,6 +149,52 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/**/
+.sign-in-li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login-image{
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  margin-top: -3px;
+}
+.zhuce-li{
+  position: relative;
+}
+.zhuce-li span{
+  display: inline-block;
+}
+.register-image{
+  position: absolute;
+  left: -6px;
+  top: 18px;
+  height: auto;
+  margin-right: 5px;
+  font-size: 15px;
+  color: #fff;
+}
+@media screen and (max-width: 768px){
+  .register-image{
+    position: absolute;
+    left: -5px;
+    top: 14px;
+    height: auto;
+    margin-right: 5px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .thenavbar{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .zhuce-li a{
+    margin-left: 20px;
+  }
+}
+/***/
 .thenavbar{
   display: flex;
   align-items: center;
@@ -178,7 +224,15 @@ export default {
   margin-bottom: 0;
 }
 .navbar-brand{
+  display: flex;
+  flex-direction: row;
   color: #fff !important;
+}
+.brand-image{
+  width: 20px;
+  height: 25px;
+  margin-right: 8px;
+  margin-top: -4px;
 }
 .navbar{
   margin-bottom: 0;

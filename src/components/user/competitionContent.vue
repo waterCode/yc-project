@@ -624,11 +624,23 @@ export default {
   padding-bottom: 50px;
   padding-top: 20px;
 }
+.competition-wenxin h4{
+  margin-bottom: 10px !important;
+}
+.competition-wenxin p {
+  margin: 5px 0;
+}
 .competition-wenxin p:last-child{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .competition-chengnuo h4{
   margin: 5px 0;
+}
+.competition-chengnuo h5:first-of-type{
+  margin-top: 10px !important;
+}
+.competition-chengnuo h5{
+  margin-bottom: 7px;
 }
 .chengnuo-last{
   margin-bottom: 20px;

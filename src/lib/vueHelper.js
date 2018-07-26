@@ -53,21 +53,6 @@ export const getAllParticipantsMembers=(that,data) =>{
     //拿到token
     network.getAllParticipantsMembers(sessionStorage.getItem('accessToken'))
       .then(
-      //   res =>{
-
-      //   res.data.forEach((e)=>{
-      //     data.push(e)
-      //   })
-      //   console.log("allMember")
-      //   console.log(res.data)
-      // }
-        // res=>{
-         // var AllDatas = res.data.registrationFormList;
-         // for(var i=0;i>AllDatas.length;i++){
-         //  data.push(AllDatas[i])
-         // }
-         // console.log(AllDatas);
-        // }
       )
   }
 
@@ -130,6 +115,8 @@ export const postJoinUsData = (that, data) =>{
         //弹窗成功并跳转
         showMsg(that, true, '提交成功', 'success')
         router.push({name: 'homePage'})
+      }else if(!res.data.result&&res.data.message=="该学生已经提交过报名表"){
+        showMsg(that, true, '你已经成功报名,不必再次提交', 'failed')
       }
     })
 }

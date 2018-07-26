@@ -19,13 +19,13 @@
                 <li><router-link to="/">主页</router-link></li>
                 <li><router-link to="/joinUsPage">加入我们</router-link></li>
                 <li class="active"><router-link to="/joinCompetition">竞赛报名</router-link></li>
-                <li :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}">登录</router-link></li>
-                <li><router-link to="/register">注册</router-link></li>
+                <li :style="{'padding':isLoginButtonShow? '0 15': '0'}"><router-link to="/login" v-show="isLoginButtonShow" :style="{'padding':isLoginButtonShow? '15': '0'}"><img class="login-image" src="./../../../static/images/login.png">登录</router-link></li>
+                <li class="zhuce-li"><router-link to="/register"><span class="register-image glyphicon glyphicon-cloud"></span><span>注册</span></router-link></li>
                 <!---->
                 <li class="loginName" v-if="isUserCenterShow">
                   <el-dropdown @command="handleCommand">
                   <span class="el-dropdown-link ">
-                      {{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
+                      <img class="login-image" src="./../../../static/images/login.png">{{currentUserName}}<i class="el-icon-arrow-down el-icon--right"></i>
                   </span>
                     <el-dropdown-menu slot="dropdown">
                       <el-dropdown-item command="a">个人中心</el-dropdown-item>
@@ -114,6 +114,52 @@ export default {
 </script>
 
 <style>
+/**/
+.sign-in-li{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.login-image{
+  margin-right: 5px;
+  width: 12px;
+  height: 12px;
+  margin-top: -3px;
+}
+.zhuce-li{
+  position: relative;
+}
+.zhuce-li span{
+  display: inline-block;
+}
+.register-image{
+  position: absolute;
+  left: -5px;
+  top: 18px;
+  height: auto;
+  margin-right: 5px;
+  font-size: 15px;
+  color: #fff;
+}
+@media screen and (max-width: 768px){
+  .register-image{
+    position: absolute;
+    left: -5px;
+    top: 14px;
+    height: auto;
+    margin-right: 5px;
+    font-size: 15px;
+    color: #fff;
+  }
+  .thenavbar{
+    display: flex;
+    flex-direction: column !important;
+  }
+  .zhuce-li a{
+    margin-left: 20px;
+  }
+}
+/***/
 .compo-brand{
   font-size: 14px;
 }

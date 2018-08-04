@@ -98,7 +98,7 @@
         <div class="photo-fourbox container">
           <div class="row twobox">
             <div><img src="./../../static/images/协同.jpg"></div>
-            <div><img src="./../../static/images/创新.jpg"></div>
+            <div><img src="./../../static/images/创新.png"></div>
           </div>
           <div class="row twobox">
             <div><img src="./../../static/images/交流.jpg"></div>
@@ -735,7 +735,7 @@ export default {
 .projects{
   width: 100%;
   height: 755px;
-  background: url("./../../static/images/加入我们背景.jpg");
+  background: url("./../../static/images/在研项目背景.png");
   background-size: 100% 755px;
   display: flex;
   flex-direction: column;
@@ -746,7 +746,7 @@ export default {
   height: auto;
   font-size: 30px;
   font-weight: bold;
-  margin: 150px 0;
+  margin: 100px 0;
   text-align: center;
   letter-spacing: 5px;
   font-family: "宋体";
@@ -757,7 +757,7 @@ export default {
   flex-wrap: wrap;
   width: 80%;
   height: auto;
-  /*border: 1px solid #fff;*/
+  margin-top: 50px;
   position: relative;
   left: 10%;
 }
@@ -772,9 +772,11 @@ export default {
 }
 @media (min-width: 750px) and (max-width: 1250px){
   .projects-title{
-    margin: 80px 0;
+    font-size: 28px;
+    margin: 90px 0;
   }
   .projects-details{
+    margin-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -785,10 +787,12 @@ export default {
 }
 @media screen and (max-width: 780px){
   .projects-title{
-    font-size: 20px;
-    margin: 80px 0;
+    font-size: 26px;
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
   .projects-details{
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -796,6 +800,9 @@ export default {
   .projects-details div{
     width: 100%;
     font-size: 16px;
+  }
+  .projects-details{
+    margin-top: 0;
   }
 }
 .team-title{

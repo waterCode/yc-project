@@ -3,7 +3,7 @@
         <div class="footer-content">
           <div class="footer-content-left">
             <span class="call-us">联系我们</span>
-            <span class="footer-yc">YC勇创</span>
+            <span class="footer-yc"><img src="./../../../static/images/logo.png" class="footeryc-image">YC勇创</span>
           </div>
           <div class="footer-content-right">
             <img src="./../../../static/images/二维码.jpg" alt="">
@@ -30,6 +30,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.footeryc-image{
+  width: 16px;
+  height: 20px;
+  margin-right: 3px;
+  margin-top: -3px;
+}
 .footer{
   padding: 50px 0;
   background: #000;
@@ -55,6 +61,8 @@ export default {
   margin-bottom: 10px;
 }
 .footer-yc{
+  display: flex;
+  align-items: center;
   color: #fff;
 }
 .footer-content-right{

@@ -15,6 +15,12 @@ require('video.js/dist/video-js.css')
 require('vue-video-player/src/custom-theme.css')
 Vue.use(VideoPlayer)
 
+/*引入vue-awesome-swiper*/
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'//这里注意具体看使用的版本是否需要引入样式，以及具体位置。
+Vue.use(VueAwesomeSwiper)
+
+
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)

@@ -97,15 +97,16 @@
         <div class="photo-box-title-2"><span>一</span>照片墙<span>一</span></div>
         <div class="photo-fourbox container">
           <div class="row twobox">
-            <div><img src="./../../static/images/协同.jpg"></div>
-            <div><img src="./../../static/images/创新.png"></div>
+            <div><img src="./../assets/img/b1.jpg"></div>
+            <div><img src="./../assets/img/b2.jpg"></div>
           </div>
           <div class="row twobox">
-            <div><img src="./../../static/images/交流.jpg"></div>
-            <div><img src="./../../static/images/合作.jpg"></div>
+            <div><img src="./../assets/img/b3.jpg"></div>
+            <div><img src="./../assets/img/b4.jpg"></div>
           </div>
         </div>
       </div>
+<!--       <swiperPage></swiperPage> -->
 
       <!--page4-->
       <div class="page-4 professor container">
@@ -465,6 +466,7 @@ export default {
 .ganwei-pic{
   width: 443px;
   height: 250px;
+  box-shadow: 6px 6px 2px #333;
 }
 @media screen and (min-width: 450px) {
   .about-us-things-1{
@@ -496,6 +498,8 @@ export default {
 }
 .page-2{
 }
+
+
 .page-3{
   width: 100%;
   height: 755px;
@@ -613,6 +617,12 @@ export default {
 .twobox img{
   width: 100%;
   height: 100%;
+  box-shadow: 6px 6px 4px #333;
+}
+.twobox img:hover{
+  transform: all 0.5s;
+  opacity: 0.8;
+  cursor: pointer;
 }
 .professor{
   width: 100%;
@@ -644,6 +654,9 @@ export default {
 }
 .professor-authorPic img{
   margin-left: 150px;
+  /*border: 1px solid black;*/
+  border-radius: 50%;
+  box-shadow: 2px 2px 2px #eee;
 }
 .professor-detail{
   width: 50%;

@@ -255,7 +255,7 @@ export default {
     width: 100%;
     font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
     position: relative;
-    top: 22%;
+    top: 10%;
 }
 
 .loginWrapper .hd {

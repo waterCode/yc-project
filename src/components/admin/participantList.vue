@@ -21,13 +21,26 @@
         <template slot-scope="scope">
           <el-button @click="findMemberDetail(scope.$index)" type="text" size="small">查看简历</el-button>
         </template>
-
       </el-table-column>
+      <el-table-column
+        prop="newGrade"
+        label="创新分"/>
+      <el-table-column
+        prop="practiceGrade"
+        label="实践分"/>
+      <el-table-column
+        prop="otherGrade"
+        label="其他分"/>
     </el-table>
 
 
     <div>
-    <el-button type="primary" @click = 'getRegistrationExcel()'>导出excel表</el-button>
+    <div class="wrapper">
+      <el-button type="primary" @click = 'getRegistrationExcel()'>导出excel表</el-button>
+      <div>（若行列不对齐，请按F5刷新）</div>
+    </div>
+    <!-- <el-button type="primary" @click = 'getRegistrationExcel()'>导出excel表</el-button> -->
+<!--     <div>（若行列不对齐，请按F5刷新）</div> -->
     </div>
   </div>
 </template>
@@ -40,7 +53,7 @@
   export default {
     name: "participant-list",
     created() {
-
+        this.getParticipantsList()
     },
     methods: {
       findMemberDetail(index) {
@@ -62,7 +75,8 @@
           method:"get",
           headers:{'authorization' : token},
         }).then(res=>{
-          var AllDatas = res.data.registrationFormList;
+          console.log(res.data.data);
+          var AllDatas = res.data.data;
           this.participantsData=AllDatas;
         })
       },
@@ -71,7 +85,7 @@
       }
     },
     mounted(){
-      this.getParticipantsList()
+
     },
     data() {
       return {
@@ -84,5 +98,9 @@
 </script>
 
 <style scoped>
-
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

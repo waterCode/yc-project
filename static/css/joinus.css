@@ -135,6 +135,8 @@
   justify-content: center;
 }
 .joinus-header{
+  display: flex;
+  justify-content: space-between;
   width: 90%;
   padding-bottom: 5px;
   border-bottom: 2px solid #fff;
@@ -172,6 +174,7 @@
 }
 .submit-button:hover{
   cursor: pointer;
+  text-decoration: none;
 }
 @media (min-width: 650px) and (max-width: 800px) {
   .joinus-desc{
@@ -201,6 +204,10 @@
   }
   .big1{
     font-size: 18px;
+  }
+  .joinus-header > span > img{
+    width: 22px;
+    height: 22px;
   }
 }
 

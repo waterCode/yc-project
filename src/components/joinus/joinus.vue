@@ -48,18 +48,20 @@
       <div class="joinus-box">
       <div class="joinus-contentbox">
       <div class="joinus-header">
-        <span class="big1">报名</span>
-        <span class="big2">Sign up now</span>
-        <span></span>
+        <div>
+          <span class="big1">报名</span>
+          <span class="big2">Sign up now</span>
+        </div>
+        <span><img src="./../../../static/images/pic6.png"></span>
       </div>
       <form class="joinus-form">
-        <input type="text" name="name" placeholder="姓名" required="required" v-model="joinUsForm.joinerName" @blur="checkName">
-        <input type="text" name="school" placeholder="学院" required="required" v-model="joinUsForm.college">
-        <input type="text" name="studentid" placeholder="学号" required="required" v-model="joinUsForm.studentNum">
-        <input type="text" name="perfession_class" placeholder="专业班级" required="required" v-model="joinUsForm.className">
-        <input type="text" name="qq" placeholder="QQ" required="required" v-model="joinUsForm.qqNum" @blur="checkQQ">
-        <input type="text" name="qqMail" placeholder="QQ邮箱" required="required" v-model="joinUsForm.qqEmail" @blur="checkQQMail">
-        <input type="text" name="telephone" placeholder="手机号码" required="required" v-model="joinUsForm.telephone" @blur="checkphone">
+        <input type="text" name="name" placeholder=" 姓名" required="required" v-model="joinUsForm.joinerName" @blur="checkName">
+        <input type="text" name="school" placeholder=" 学院" required="required" v-model="joinUsForm.college">
+        <input type="text" name="studentid" placeholder=" 学号" required="required" v-model="joinUsForm.studentNum">
+        <input type="text" name="perfession_class" placeholder=" 专业班级" required="required" v-model="joinUsForm.className">
+        <input type="text" name="qq" placeholder=" QQ" required="required" v-model="joinUsForm.qqNum" @blur="checkQQ">
+        <input type="text" name="qqMail" placeholder=" QQ邮箱" required="required" v-model="joinUsForm.qqEmail" @blur="checkQQMail">
+        <input type="text" name="telephone" placeholder=" 手机号码" required="required" v-model="joinUsForm.telephone" @blur="checkphone">
         <select v-model="joinUsForm.groupName">
           <option value="飞控组" selected="selected">飞控组</option>
           <option value="机器人组">机器人组</option>
@@ -70,10 +72,10 @@
           <option value="网页组">网页组</option>
           <option value="专利组">专利组</option>
         </select>
-        <textarea style="resize:none" placeholder="自我介绍" required="required" v-model="joinUsForm.introduceDescription" maxlength="200"></textarea>
-        <textarea style="resize:none" placeholder="目前掌握技能" required="required" v-model="joinUsForm.skill" maxlength="200"></textarea>
-        <textarea style="resize:none" placeholder="项目经验" required="required" v-model="joinUsForm.experience" maxlength="200"></textarea>
-        <textarea style="resize:none" placeholder="获奖情况" required="required" v-model="joinUsForm.award" maxlength="200"></textarea>
+        <textarea style="resize:none" placeholder=" 自我介绍" required="required" v-model="joinUsForm.introduceDescription" maxlength="200"></textarea>
+        <textarea style="resize:none" placeholder=" 目前掌握技能" required="required" v-model="joinUsForm.skill" maxlength="200"></textarea>
+        <textarea style="resize:none" placeholder=" 项目经验" required="required" v-model="joinUsForm.experience" maxlength="200"></textarea>
+        <textarea style="resize:none" placeholder=" 获奖情况" required="required" v-model="joinUsForm.award" maxlength="200"></textarea>
         <a class="submit-button" @click ='joinUs()'>提交</a>
       </form>
       </div>

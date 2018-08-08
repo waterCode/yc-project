@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <router-link to="/" class="navbar-brand compo-brand">Runoob 第九届“纳丽德杯”NEXTORCH未来手电设计大赛报名表</router-link>
+              <div class="navbar-brand compo-brand">Runoob 第九届“纳丽德杯”NEXTORCH未来手电设计大赛报名表</div>
             </div>
             <div class="collapse navbar-collapse pull-right" id="example-navbar-collapse">
               <ul class="nav navbar-nav thenavbar">
@@ -188,9 +188,10 @@ export default {
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
+      margin-left: -21px;
     }
     .compot-navbarnav > .navbar-toggle{
-      margin-left: 15px;
+      margin-left: 10px;
     }
 }
 .video-js .vjs-big-play-button{}

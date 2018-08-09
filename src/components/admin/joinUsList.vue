@@ -7,7 +7,7 @@
 
       <el-table-column style="text-align:center"
         prop="id"
-        label="次序 ↓"/>
+        label="次序"/>
       <el-table-column
         prop="joinerName"
         label="姓名"/>
